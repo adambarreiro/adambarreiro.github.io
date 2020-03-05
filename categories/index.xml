@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Adam Barreiro Costa | Software Engineer</title>
+    <link>https://www.adambarreiro.com/categories/</link>
+    <description>Recent content in Categories on Adam Barreiro Costa | Software Engineer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>adambarreiro@protonmail.com (Adam)</managingEditor>
+    <webMaster>adambarreiro@protonmail.com (Adam)</webMaster>
+    <atom:link href="https://www.adambarreiro.com/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
