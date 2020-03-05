@@ -1,0 +1,92 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+body {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    margin: auto;
+    vertical-align: middle;
+    max-width: 50%;
+    padding-top: 5%;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.mainbox {
+    padding: 2em 5em 2em 5em;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#avatar {
+    border-radius: 100%;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+img {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    text-align: justify;
+}
+
+#separator {
+    margin: auto;
+    height: 1px;
+    background-color: white;
+    width: 50%;
+}
+
+ul {
+    display: inline-block;
+    background-color rgba(255, 255, 255, 0.8);
+}
+
+.content {
+    margin-bottom: 2em;
+}
+
+.links {
+    margin-top: 3em;
+    width: 100%;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.links > a {
+    padding: 1em;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: rgba(57, 158, 252, 0.5);
+}
+
+.links > a:hover {
+    background: white;
+    color: black;
+}
+
+.footer {
+    margin-top: 3em;
+    text-align: right;
+}
+
+.footer > a {
+    color: rgba(57, 158, 252, 0.5);
+}
+
+.footer > a:hover {
+    color: rgba(57, 158, 252, 1);
+}
+

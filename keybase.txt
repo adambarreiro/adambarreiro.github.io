@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/adambarreiro
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.adambarreiro.net
+  * I am adambarreiro (https://keybase.io/adambarreiro) on keybase.
+  * I have a public key with fingerprint 24CF 5636 0290 3733 F140  D230 2B1A 684D CEFF 99AB
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120b205b243c618e8f50ad1ea427c1d46348b6244ac063f8cb002c28f064d6ffab70a",
+      "fingerprint": "24cf563602903733f140d2302b1a684dceff99ab",
+      "host": "keybase.io",
+      "key_id": "2b1a684dceff99ab",
+      "kid": "0101dcbdc51576e7ec403f6741a28e0c279db1fd4cb4475831d672dc3b62a459fb6f0a",
+      "uid": "e1492e4427112b1865c98323ccd99e19",
+      "username": "adambarreiro"
+    },
+    "service": {
+      "hostname": "www.adambarreiro.net",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1583450639,
+  "expire_in": 157680000,
+  "prev": "3cb7630f86cb1dbf91cf060bd3907bed2c478e4026162c23aa054f21a5213a8b",
+  "seqno": 42,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMN2AnicbVJrTBRXGJ3lIWVbwLSs65KmgaGNqfKYO3PnRQkpsbwq0ERNGoPtZubO
+HRiBXZzdhUVC66O0hiBqrK0KQWpEG7HQB2IFEwqlBXmtxLS0oLUVjQWkwUgsSCqd
+JZr0R++fm3vv+c53zvlub1ggYTZtiCrIGVk+3mwa7D7tId6VqiMqSNmplJNJFWQh
+XtlwkYJdbnuhppBJJAVoSqYpVqYhgzggYEFlKUkBWII0j4ACOQYKMkdDKCGKY1QB
+yRRFI1pQKQ4qnKpKMk9JZBypao58rJfomsNt0NIQqSzHcBQtUgzPMCqAlEIzFC0D
+iROggrCqiqIkG4UFTpe/whAnSy6coDmNO+NgX5H3P/inuimgIFlBLGB5DvMYQYpR
+OR4CiRYwhWheVGSgKhDJEPKswACF42kFMYYXCbKiKnPqim7PCh0GUKQxNDwDYPQU
+OBaJAkMzCCmiiIHoB7qw7pCKsYGWFKlYlnQda7qTrIwjjZdSDWF/uH43T1BlZWUJ
+/0UmOLDb4CnRnW4nchYZiAK3u8SV5Gdwl5eslGDZ/oTMLmsOxcjUqCjFuktzOsgk
+YCCRW/OzA8MSZI2JiHEk9pZoOrZrfoQRhkAZy98HlxqUDJJ5jqFUgUMyUGRVBMgY
+HSUrjEjxMlZoBHkBQ4rmAGfMlZEkioUqDSSWBowk+BN34Z0OJ5kEaUOnlG9wurR8
+h+T26Jis7OneHkSYzMSq4AD/ZyPMoauffsE95ojHsaYa63rb3VVRb7dVHsIHH/bN
+dkS3TJy73est0iLW7R5srSW62WOlF46fubzAZw09qj/Um8x64lILN6UNLHmqbgcT
+/bM1cmj1kU0j3vm+kJxtLXUg37e/ctBEVL//7I1FW0pgcsu3X+kxAc6mz9QJe3rj
+lTB7s+/TbZNR9v3ee4tp8WN5fX36XPatqR/aZyMeXt3ZVm1JW8703Nhw84A6kGr9
+7T0USKQGdaz5qerwMjEWeQzvyq6xnzp7P6th8Z/z2c9tnV+fvPpeYlT8LxfH67n6
+g9pUiOmFAMFaf8AZExxrp5Y2L0zbLP0Zo2WBPovt0pwlrHUE7lumsq8X11y/RLja
+aqNeG815J2Pv1RdBg/VNr208UwrfCHf9SDwTH/5le6xtsfNE+vTW8DWtw4lj6afj
+O9R10X+UDTw/n/d5ri/k/CcX84abgva0bWzsv7zw3bWj/Wunx+erjp7UuxYfJ46K
+J3a81J73tTfauqAVq5bRBfPHI2984Xvr0Z8XLD8/gM2H7zaduv9RSoKrAb/ekpU8
+1Hlrqjv35cThvoTJaN+dJRj9YUZlZsrEq7bvr5gDu/TQb2b2/oU+gCcntwftGJwc
+zi0vSovp6XKuVUYc9mtbTNbexs7NdQ96X8nrnNnSoZ+L/LvpTt10q/T72bhIvqep
+1jTD7h64ObkvqGZOOjPUov8aXPEvfD/GGA==
+=CAt9
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/adambarreiro
+
+==================================================================
