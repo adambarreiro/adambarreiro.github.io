@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>best practices - Tag - Adam Barreiro Costa | Software Engineer</title>
+        <link>https://www.adambarreiro.com/tags/best-practices/</link>
+        <description>best practices - Tag - Adam Barreiro Costa | Software Engineer</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>adambarreiro@protonmail.com (Adam)</managingEditor>
+            <webMaster>adambarreiro@protonmail.com (Adam)</webMaster><lastBuildDate>Thu, 05 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://www.adambarreiro.com/tags/best-practices/" rel="self" type="application/rss+xml" /><item>
+    <title>Domain-Driven Design: The cool parts (Part 1)</title>
+    <link>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</link>
+    <pubDate>Thu, 05 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg" referrerpolicy="no-referrer">
+            </div>In this series of posts I&rsquo;ll try to summarize and distill the great and famous book written by Eric Evans, &quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot;, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.
+In this first part I&rsquo;ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach.]]></description>
+</item></channel>
+</rss>

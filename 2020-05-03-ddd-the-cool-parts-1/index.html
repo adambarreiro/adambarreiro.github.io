@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Domain-Driven Design: The cool parts (Part 1) - Adam Barreiro Costa | Software Engineer</title><meta name="Description" content="Adam Barreiro Costa | Software Engineer"><meta property="og:title" content="Domain-Driven Design: The cool parts (Part 1)" />
+<meta property="og:description" content="In this series of posts I&rsquo;ll try to summarize and distill the great and famous book written by Eric Evans, &quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot;, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.
+In this first part I&rsquo;ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" />
+<meta property="article:published_time" content="2020-03-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-02T23:07:07+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Domain-Driven Design: The cool parts (Part 1)"/>
+<meta name="twitter:description" content="In this series of posts I&rsquo;ll try to summarize and distill the great and famous book written by Eric Evans, &quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot;, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.
+In this first part I&rsquo;ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach."/>
+<meta name="application-name" content="Adam Barreiro Costa | Software Engineer">
+<meta name="apple-mobile-web-app-title" content="Adam Barreiro Costa | Software Engineer"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" /><link rel="next" href="https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.8235a67a2521ef99fb1e455a5891b022af1653b4ede3cfffcac4e473beee88fbcc1a36bbb3cfdd75fd6df46732032f9d96e30adae9c88b769e1fbf7945cd27e0.css" integrity="sha512-gjWmeiUh75n7HkVaWJGwIq8WU7Tt48//ysTkc77uiPvMGja7s8/ddf1t9GcyAy&#43;dluMK2unIi3aeH795Rc0n4A=="><link rel="stylesheet" href="/css/style.min.89b621a9bf174f6453c265bdcf5f2ffe8feb8bf3555ce4432c220058d367643a9e0aae3b0c211fc83b05a5bdc47d2ce47d74361d8a2becb6f76a7df35e3c3def.css" integrity="sha512-ibYhqb8XT2RTwmW9z18v/o/ri/NVXORDLCIAWNNnZDqeCq47DCEfyDsFpb3EfSzkfXQ2HYor7Lb3an3zXjw97w=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.2fb31670aec534f73036a9cb759abcea54c760b750a996b3e58700804fb97271a6970f094f4dd0076fa8c4bd74d14781e9197364b531086492e3ffbe98d65dc7.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE&#43;5cnGmlw8JT03QB2&#43;oxL100UeB6RlzZLUxCGSS4/&#43;&#43;mNZdxw=="><link rel="stylesheet" href="/lib/animate/animate.min.76826b0bfa1c53c546551c773bdf7cd7ed9a6149f77ee5955afa8b8b553eb40d8c595cecc3e3552aad4fac4345d3733e4d804ff763e7614957147d595b41692f.css" integrity="sha512-doJrC/ocU8VGVRx3O9981&#43;2aYUn3fuWVWvqLi1U&#43;tA2MWVzsw&#43;NVKq1PrENF03M&#43;TYBP92PnYUlXFH1ZW0FpLw=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Domain-Driven Design: The cool parts (Part 1)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.adambarreiro.com\/2020-05-03-ddd-the-cool-parts-1\/"
+        },"genre": "posts","keywords": "ddd, best practices","wordcount":  727 ,
+        "url": "https:\/\/www.adambarreiro.com\/2020-05-03-ddd-the-cool-parts-1\/","datePublished": "2020-03-05T00:00:00+00:00","dateModified": "2020-06-02T23:07:07+02:00","publisher": {
+            "@type": "Organization",
+            "name": "Adam"},"author": {
+                "@type": "Person",
+                "name": "Adam"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Adam Barreiro Costa | Software Engineer">Adam Barreiro Costa</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about"> About me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/cv.pdf"> CV </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Adam Barreiro Costa | Software Engineer">Adam Barreiro Costa</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about" title="">About me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/cv.pdf" title="">CV</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Domain-Driven Design: The cool parts (Part 1)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Adam</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-05">2020-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;727 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg"
+        data-srcset="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg, /posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg 1.5x, /posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg"
+        title="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#work-as-one-collaborative-team">Work as one collaborative team</a></li>
+    <li><a href="#but-what-is-themodel">But… what is the model?</a></li>
+    <li><a href="#implementing-themodel">Implementing the model</a></li>
+    <li><a href="#and-thats-it-for-today">And that&rsquo;s it for today!</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>In this series of posts I&rsquo;ll try to summarize and distill the great and famous book written by Eric Evans, <em>&quot;<a href="https://dddcommunity.org/book/evans_2003/" target="_blank" rel="noopener noreffer">Domain-Driven Design: Tackling Complexity in the Heart of Software</a>&quot;</em>, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.</p>
+<p>In this first part I&rsquo;ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach.</p>
+<h2 id="work-as-one-collaborative-team">Work as one collaborative team</h2>
+<p>First of all, the main requirement for anyone planning to work using DDD is to be willing to collaborate as one team and one brain. This means that there can&rsquo;t be a separation between <strong>domain experts</strong> (this is, business experts, product owners… you name it) and <strong>developers</strong> (engineers, architects…). This close relationship will make developers understand business and business understand developers. Think about it, we as developers are very comfortable talking about classes, patterns and architectural elements… but domain experts normally don&rsquo;t understand these concepts, as well as we don&rsquo;t usually tend to care about the business rules, requirements, corner use cases and so on.</p>
+<p>The idea is that together, domain experts and developers can come to a final situation in which <strong>they speak the same language</strong>. Through several brainstormings, talks, reviews and refinements, the <strong>domain model</strong> will start to emerge using this common language (aka <em>&ldquo;ubiquitous language&rdquo;</em>, in words of Eric Evans). For example, a developer will understand what a &ldquo;cargo shipment&rdquo; is, or a &ldquo;VIP customer&rdquo;, or a &ldquo;health insurance&rdquo;, etc; for that company and their business colleagues. In addition, a domain expert will start to understand the relationships that developer is creating across classes, and what these classes do mean.</p>
+<p>With several iterations, domain experts and developers should refine the model, <strong>continuously learning</strong>, filling gaps and fixing contradictions, working as one unit.</p>
+<h2 id="but-what-is-themodel">But… what is the model?</h2>
+<p>The model is like the skeleton, structure or <strong>backbone that gives shape to the common language</strong> that has been created by domain experts and developers. It can be done using different tools, like UML diagrams that represent classes, rules, operations, interactions, relationships… but we should take into account that the most important thing is the language and the expresiveness of the model. If something is not understandable through UML, use explanatory or auxiliary diagrams, use text, drawings… anything that supports and enriches the model and is supported by the language.</p>
+<h2 id="implementing-themodel">Implementing the model</h2>
+<p>As we need to finally implement the model, the design of the solution has to be <strong>bounded</strong> with it. This means, any change to the model should be reflected in the design (and supported by the language!) and viceversa.</p>
+<p>This implementation has to be doable, of course. Therefore, <strong>models must be practical</strong> (no hundreds of thousands of classes, please), and if we want the solutions and systems to last, the developers and domain experts should continue working closely throughout all the project lifecycle.</p>
+<p>In terms of architecture, <strong>it&rsquo;s crucial to isolate the domain in its own layer</strong>, no matter which type of architecture we choose. For example, it&rsquo;s common to feel the temptation of including business logic in UI. Wrong! Spreading the business logic across layers will make the solution hard to mantain and hard to understand. If we make a change to the business logic, we want to impact the less possible layers and components in our architecture.</p>
+<p>In his book, Eric Evans talks about the following layered architecture as reference, from top to bottom:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png"
+        data-srcset="/posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png, /posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png 1.5x, /posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png 2x"
+        data-sizes="auto"
+        alt="/posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png"
+        title="Layered Architecture" /></p>
+<ul>
+<li><strong>UI layer:</strong> Shows info to the users and interprets commands.</li>
+<li><strong>Application layer:</strong> Defines jobs and coordinates tasks, but doesn&rsquo;t contain business logic.</li>
+<li><strong>Domain layer:</strong> Represents the business logic. Remember, <strong>isolated</strong>!</li>
+<li><strong>Infrastructure layer:</strong> Provides technical capabilities for the upper layers. For example, database configurations, transactions, caches&hellip;</li>
+</ul>
+<p>And one important aspect of the development process is that we tend to use frameworks a lot. So we need to take into account that we should use frameworks that allow to put the focus in the domain model, and most important, to isolate it.</p>
+<h2 id="and-thats-it-for-today">And that&rsquo;s it for today!</h2>
+<p>In following parts of this series about DDD I&rsquo;ll explore the implementation details, how we can express this model through several elements, such as entities, value objects, services, modules and more.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-06-02&nbsp;<a class="git-hash" href="https://github.com/adambarreiro/adambarreiro.github.io/commit/2e98899dc941e7cbdde658020b5d000e8e54641a" target="_blank" title="commit by Adam Barreiro(adambarreiro@protonmail.com) 2e98899dc941e7cbdde658020b5d000e8e54641a: Initial commit">
+                                    <i class="fas fa-hashtag fa-fw"></i>2e98899</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ddd/">ddd</a>,&nbsp;<a href="/tags/best-practices/">best practices</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/2020-06-03-how-to-execute-jenkins-jobs-programatically/" class="next" rel="next" title="How to execute Jenkins jobs programatically">How to execute Jenkins jobs programatically<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.72.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Adam</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.2d0f7b71a99aaff94e9624ff32a8dc42ce645a0cba433fdc091cf34735027efd1fa2db024c2f591d768f426255f17bbf3d500b7c967b0437b3979956dffa81c6.css" integrity="sha512-LQ97camar/lOliT/MqjcQs5kWgy6Qz/cCRzzRzUCfv0fotsCTC9ZHXaPQmJV8Xu/PVALfJZ7BDezl5lW3/qBxg=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.e9c0c2a48f70798908fc0c6e65ba47b80e8cd3961f0580a2fee3a84434d3af807a674e9447b49523af87a6a80642a32887c031eb5e1ded2af091bcd8e4bcd935.js" integrity="sha512-6cDCpI9weYkI/AxuZbpHuA6M05YfBYCi/uOoRDTTr4B6Z06UR7SVI6&#43;HpqgGQqMoh8Ax614d7SrwkbzY5LzZNQ=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.95377e01eea2e97083a9e6b4ae56c55a423a5b0cb7e6a298f06c004bbc318ff9a88e6687caa4c1c869aa278c33aae29bdb234b2cd85ae80acf7ad76b7ad61862.js" integrity="sha512-lTd&#43;Ae6i6XCDqea0rlbFWkI6Wwy35qKY8GwAS7wxj/mojmaHyqTByGmqJ4wzquKb2yNLLNha6ArPetdretYYYg=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.1e225d911c92cd786251c5f65707976a2cbcc9e636d767a9fe3e75cd1ff3e483c25f86543b169fea7689ff47502ffda5f992fe07d8a7feee274fc40967fde68a.js" integrity="sha512-HiJdkRySzXhiUcX2VweXaiy8yeY212ep/j51zR/z5IPCX4ZUOxaf6naJ/0dQL/2l&#43;ZL&#43;B9in/u4nT8QJZ/3mig=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.4e60f014b860dd4038646d046f8308c93d4ed4c6fe3b0c399051b4b87a97b1d6f2673f4372f61084aa4680d91a98023a876946199ab65fc7ed389bc5fd78d352.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb&#43;Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.81aded0ba6eedebfe22caa897e638696523789a7007b47458b522e6eed8180129322031d88a9e4b6b0cf17a016150a18b80719db46ae6a7251735909f735db16.js" integrity="sha512-ga3tC6bu3r/iLKqJfmOGllI3iacAe0dFi1Iubu2BgBKTIgMdiKnktrDPF6AWFQoYuAcZ20auanJRc1kJ9zXbFg=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.843586ca1f88cb832bf401cecd43f6f98d2254f9ff070c716a84a57848c7fe2d68e0455317fb21d3f0354b28a2f0f58e69efae3ebf93fca1f0ca7a1e6d2b8087.js" integrity="sha512-hDWGyh&#43;Iy4Mr9AHOzUP2&#43;Y0iVPn/BwxxaoSleEjH/i1o4EVTF/sh0/A1Syii8PWOae&#43;uPr&#43;T/KHwynoebSuAhw=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.c975ea3858dd8c7347d46343fb510ed236efbde6c0069cc6283eba7639d47e22a560c1391c6314247a0269e1380f93d31b662c4897fa770ab2514bd0bd2d2f68.js" integrity="sha512-yXXqOFjdjHNH1GND&#43;1EO0jbvvebABpzGKD66djnUfiKlYME5HGMUJHoCaeE4D5PTG2YsSJf6dwqyUUvQvS0vaA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.69ac882c686e101963f9cd3dc6167cee800004e4e9f40dae6f6fbeb3b03fb81ead782f98cc6e6eeec42b70a1b7047c7902e8f0ba3171660e2c2dc59d62965c7a.js" integrity="sha512-aayILGhuEBlj&#43;c09xhZ87oAABOTp9A2ub2&#43;&#43;s7A/uB6teC&#43;YzG5u7sQrcKG3BHx5AujwujFxZg4sLcWdYpZceg=="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-168445862-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168445862-1" async></script></body>
+</html>
