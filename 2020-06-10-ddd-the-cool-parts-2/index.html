@@ -144,7 +144,7 @@ Entities and Value Objects An Entity is the most basic kind of component in the 
 <h2 id="services">Services</h2>
 <p><strong>Services</strong> are operations that don&rsquo;t belong to an entity or value objects, but still have their own meaning and importance inside the model. They can also work creating some reusable logic for very granular domain entities. For example, think about an operation that performs the sign up of an student an assigns her to a specific classroom. This could be modelled as a service that interacts with two entities and describes a <strong>specific operation</strong> inside a use case.</p>
 <h2 id="modules">Modules</h2>
-<p>As its name suggest, <strong>modules</strong> provide isolation to a specific group of entities, services and VOs from the rest of the model, so you can concentrate and focus separately in each part of it. Also it provides cohesion to the components grouped inside of them, and they shape the domain on a larger scale.</p>
+<p>As their name suggest, <strong>modules</strong> provide isolation to a specific group of entities, services and VOs from the rest of the model, so you can concentrate and focus separately in each part of it. Also it provides cohesion to the components grouped inside of them, and they shape the domain on a larger scale.</p>
 <h2 id="aggregates">Aggregates</h2>
 <p>In most cases, we have a bunch of entities that are related one to another. For example, we could have the following entities: <em>Car</em>, <em>Wheel</em> and <em>Motor</em>. If your model allows to manipulate these entities without any kind of constraint, you could end up managing <em>Wheels</em> separately, or even a <em>Motor</em>, without having any <em>Car</em> instantiated. Does it make sense? Not at all:</p>
 <ul>
