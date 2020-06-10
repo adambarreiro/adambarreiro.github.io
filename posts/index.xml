@@ -4,7 +4,17 @@
         <link>https://www.adambarreiro.com/posts/</link>
         <description>All Posts | Adam Barreiro Costa | Software Engineer</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>adambarreiro@protonmail.com (Adam)</managingEditor>
-            <webMaster>adambarreiro@protonmail.com (Adam)</webMaster><lastBuildDate>Wed, 03 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://www.adambarreiro.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>adambarreiro@protonmail.com (Adam)</webMaster><lastBuildDate>Wed, 10 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://www.adambarreiro.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Domain-Driven Design: The cool parts (Part 2)</title>
+    <link>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</link>
+    <pubDate>Wed, 10 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg" referrerpolicy="no-referrer">
+            </div>In the first part of this series we introduced the basic principles that serve as a core of the Domain-Driven Design: The ubiquitous language, the model and the layered architecture. In this post we&rsquo;ll review a first bunch of components used to model the domain: Entities, Value Objects, Services and Aggregates.
+Entities and Value Objects An Entity is the most basic kind of component in the set of tools to model your domain, and basically it&rsquo;s an object that represents something that has an unique identity, that is preserved over time and thorough different representations.]]></description>
+</item><item>
     <title>How to execute Jenkins jobs programatically</title>
     <link>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</link>
     <pubDate>Wed, 03 Jun 2020 00:00:00 &#43;0000</pubDate>
