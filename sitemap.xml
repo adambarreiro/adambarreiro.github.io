@@ -2,12 +2,12 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://www.adambarreiro.com/</loc><lastmod>2020-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.adambarreiro.com/tags/best-practices/</loc><lastmod>2020-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.adambarreiro.com/tags/ddd/</loc><lastmod>2020-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</loc><lastmod>2020-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.adambarreiro.com/posts/</loc><lastmod>2020-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.adambarreiro.com/tags/</loc><lastmod>2020-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.adambarreiro.com/</loc><lastmod>2020-06-10T22:34:18&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.adambarreiro.com/tags/best-practices/</loc><lastmod>2020-06-10T22:34:18&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.adambarreiro.com/tags/ddd/</loc><lastmod>2020-06-10T22:34:18&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</loc><lastmod>2020-06-10T22:34:18&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.adambarreiro.com/posts/</loc><lastmod>2020-06-10T22:34:18&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.adambarreiro.com/tags/</loc><lastmod>2020-06-10T22:34:18&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://www.adambarreiro.com/tags/devops/</loc><lastmod>2020-06-03T19:54:47&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</loc><lastmod>2020-06-03T19:54:47&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://www.adambarreiro.com/tags/jenkins/</loc><lastmod>2020-06-03T19:54:47&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
