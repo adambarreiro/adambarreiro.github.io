@@ -13,7 +13,7 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/2020-07-03-monoliths-are-bad-are-they/building.jpg" referrerpolicy="no-referrer">
             </div>Some things happened recently that made me write this post:
-  First one, HEY was released. If you are not from this planet and never heard about HEY, you only need to know that it is a new and peculiar email service and that it made a bit of noise in social networks due to some issues with Apple. Anyway, the point is that David Heinemeier Hansson made some statements about its architecture on Twitter&hellip; he declared it was a monolithic application.]]></description>
+  First one, HEY was released. If you are not from this planet and never heard about HEY, you only need to know that it is a new and peculiar email service that made a bit of noise in social networks due to some issues with Apple. Anyway, the point is that David Heinemeier Hansson made some statements about its architecture on Twitter&hellip; he declared it was a monolithic application.]]></description>
 </item><item>
     <title>Domain-Driven Design: The cool parts (Part 2)</title>
     <link>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</link>
