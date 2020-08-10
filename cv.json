@@ -2,11 +2,11 @@
   "basics": {
     "name": "Adam Barreiro Costa",
     "label": "Software Engineer",
-    "picture": "",
+    "picture": "https://www.adambarreiro.com/avatar.jpg",
     "email": "adambarreiro@pm.me",
     "phone": "+34675725321",
     "website": "https://adambarreiro.com",
-    "summary": "",
+    "summary": "https://www.adambarreiro.com/about",
     "location": {
       "address": "",
       "postalCode": "",
@@ -15,13 +15,29 @@
       "region": "Zaragoza"
     },
     "profiles": [{
-      "network": "Twitter",
+      "network": "GitHub",
       "username": "adambarreiro",
-      "url": "http://twitter.com/adambarreiro"
+      "url": "https://github.com/adambarreiro"
     },{
       "network": "LinkedIn",
       "username": "adambarreiro",
       "url": "https://www.linkedin.com/in/adambarreiro/"
+    },{
+      "network": "Twitter",
+      "username": "adambarreiro",
+      "url": "http://twitter.com/adambarreiro"
+    },{
+      "network": "Keybase",
+      "username": "adambarreiro",
+      "url": "https://keybase.io/adambarreiro"
+    },{
+      "network": "StackOverflow",
+      "username": "adambarreiro",
+      "url": "https://stackoverflow.com/users/2571734/adam-barreiro"
+    },{
+      "network": "DEV.to",
+      "username": "adambarreiro",
+      "url": "https://dev.to/adambarreiro"
     }]
   },
   "work": [{
