@@ -25,14 +25,63 @@
     }]
   },
   "work": [{
-    "company": "adidas",
+    "company": "Adidas",
     "position": "Software Engineer",
     "website": "https://www.adidas.com",
     "startDate": "2017-04-04",
     "endDate": "",
+    "summary": "Promoted in 2020",
+    "highlights": [
+      "Enabled CI/CD in three CRM area projects",
+      "Trained colleagues on Git, Docker, Jenkins and Kubernetes",
+      "Built from scratch whole CI/CD landscape for Creators Club, the Adidas loyalty program, following a GitOps approach (similar to Flux CD)",
+      "Build and deploy time reduced from ~3h to ~5min. Time to market reduced from 4 weeks to 1 week",
+      "Monitoring setup from scratch. Oncall establishment with OpsGenie and automated response to outages with Jenkins",
+      "Developed Spring Boot services in an event-driven architecture with Kafka for Creators Club",
+      "Currently migrating all Creators Club services and database from on-premises to AWS"
+    ]
+  },{
+    "company": "Everis",
+    "position": "Solutions Analyst",
+    "website": "https://www.everis.com",
+    "startDate": "2015-03-01",
+    "endDate": "2017-04-03",
+    "summary": "Promoted in 2016",
+    "highlights": [
+      "Contributed adding new features to a Java framework for Caixabank",
+      "Contributed adding new components to an UI framework made with vanilla JS for Caixabank"
+    ]
+  },{
+    "company": "Capgemini",
+    "position": "Junior Consultant",
+    "website": "https://www.capgemini.com",
+    "startDate": "2014-06-01",
+    "endDate": "2015-03-01",
     "summary": "",
     "highlights": [
-      ""
+      "Contributed releasing new features in Carrefour eCommerce, like a brand-newshopping cart or 'click and collect'",
+      "Started from scratch a website for E·ON, to ease client management and acquisition"
+    ]
+  },{
+    "company": "Capgemini",
+    "position": "Programmer",
+    "website": "https://www.capgemini.com",
+    "startDate": "2013-10-01",
+    "endDate": "2014-05-31",
+    "summary": "",
+    "highlights": [
+      "Contributed migrating Carrefour eCommerce to a newest version of Oracle ATG",
+      "Worked here while doing my final project at Universityof Zaragoza"
+    ]
+  },{
+    "company": "Capgemini",
+    "position": "Intern",
+    "website": "https://www.capgemini.com",
+    "startDate": "2012-06-01",
+    "endDate": "2014-09-01",
+    "summary": "",
+    "highlights": [
+      "Migrated a Desigual B2B website from mySQL to OpenCMS"
     ]
   }],
   "education": [{
@@ -43,14 +92,31 @@
     "endDate": "2014-05-01",
     "gpa": "",
     "courses": []
+  },{
+    "institution": "UNED",
+    "area": "BSc in Mathematics",
+    "studyType": "Masters",
+    "startDate": "2018-09-01",
+    "endDate": "",
+    "gpa": "",
+    "courses": []
   }],
   "skills": [{
-    "name": "Web Development",
-    "level": "Master",
+    "name": "Backend development",
+    "level": "Medium",
     "keywords": [
-      "HTML",
-      "CSS",
-      "Javascript"
+      "Java",
+      "Spring Boot"
+    ]
+  },{
+    "name": "DevOps",
+    "level": "Medium",
+    "keywords": [
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "AWS",
+      "Monitoring"
     ]
   }],
   "languages": [{
