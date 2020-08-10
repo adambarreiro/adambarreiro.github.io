@@ -1,0 +1,63 @@
+{
+  "basics": {
+    "name": "Adam Barreiro Costa",
+    "label": "Software Engineer",
+    "picture": "",
+    "email": "adambarreiro@pm.me",
+    "phone": "+34675725321",
+    "website": "https://adambarreiro.com",
+    "summary": "",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Zaragoza",
+      "countryCode": "ES",
+      "region": "Zaragoza"
+    },
+    "profiles": [{
+      "network": "Twitter",
+      "username": "adambarreiro",
+      "url": "http://twitter.com/adambarreiro"
+    },{
+      "network": "LinkedIn",
+      "username": "adambarreiro",
+      "url": "https://www.linkedin.com/in/adambarreiro/"
+    }]
+  },
+  "work": [{
+    "company": "adidas",
+    "position": "Software Engineer",
+    "website": "https://www.adidas.com",
+    "startDate": "2017-04-04",
+    "endDate": "",
+    "summary": "",
+    "highlights": [
+      ""
+    ]
+  }],
+  "education": [{
+    "institution": "University of Zaragoza",
+    "area": "BSc and MSc in Computer Science Engineering",
+    "studyType": "Masters",
+    "startDate": "2008-09-01",
+    "endDate": "2014-05-01",
+    "gpa": "",
+    "courses": []
+  }],
+  "skills": [{
+    "name": "Web Development",
+    "level": "Master",
+    "keywords": [
+      "HTML",
+      "CSS",
+      "Javascript"
+    ]
+  }],
+  "languages": [{
+    "language": "Spanish",
+    "fluency": "Native"
+  },{
+    "language": "English",
+    "fluency": "Full professional proficiency"
+  }]
+}
