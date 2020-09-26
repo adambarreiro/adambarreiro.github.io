@@ -49,9 +49,9 @@
     "summary": "Promoted in 2020",
     "highlights": [
       "Enabled CI/CD in three CRM area projects",
-      "Trained colleagues on Git, Docker, Jenkins and Kubernetes",
+      "Trained colleagues on Git, Docker, Jenkins, and Kubernetes",
       "Built from scratch whole CI/CD landscape for Creators Club, the Adidas loyalty program, following a GitOps approach (similar to Flux CD)",
-      "Build and deploy time reduced from ~3h to ~5min. Time to market reduced from 4 weeks to 1 week",
+      "Build and deploy time reduced from ~3h to ~5min. Time to market decreased from 4 weeks to 1 week",
       "Monitoring setup from scratch. Oncall establishment with OpsGenie and automated response to outages with Jenkins",
       "Developed Spring Boot services in an event-driven architecture with Kafka for Creators Club",
       "Currently migrating all Creators Club services and database from on-premises to AWS"
@@ -75,7 +75,7 @@
     "endDate": "2015-03-01",
     "summary": "",
     "highlights": [
-      "Contributed releasing new features in Carrefour eCommerce, like a brand-newshopping cart or 'click and collect'",
+      "Contributed to releasing new features in Carrefour eCommerce, like a brand-newshopping cart or 'click and collect'",
       "Started from scratch a website for E·ON, to ease client management and acquisition"
     ]
   },{
@@ -86,7 +86,7 @@
     "endDate": "2014-05-31",
     "summary": "",
     "highlights": [
-      "Contributed migrating Carrefour eCommerce to a newest version of Oracle ATG",
+      "Contributed migrating Carrefour eCommerce to a newer version of Oracle ATG",
       "Worked here while doing my final project at Universityof Zaragoza"
     ]
   },{
