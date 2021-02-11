@@ -4,9 +4,19 @@
         <link>https://www.adambarreiro.com/</link>
         <description>Adam Barreiro Costa | Software Engineer</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>adambarreiro@protonmail.com (Adam)</managingEditor>
-            <webMaster>adambarreiro@protonmail.com (Adam)</webMaster><lastBuildDate>Fri, 03 Jul 2020 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>adambarreiro@protonmail.com (Adam)</webMaster><lastBuildDate>Thu, 11 Feb 2021 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://www.adambarreiro.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>My experience with hiring processes</title>
+    <link>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</link>
+    <pubDate>Thu, 11 Feb 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2021-02-11-my-experience-with-hiring-processes/harold.jpg" referrerpolicy="no-referrer">
+            </div>In some weeks I&rsquo;ll be starting a new adventure in another company. In this post I&rsquo;m sharing some tips and ideas about hiring processes after sending countless resumes, facing innumerable interviews, technical challenges, and finally being hired by a promising team.
+My previous experience Before I decided to leave my current employer I participated in no more than three hiring processes, so we can say that I had almost no experience at all in terms of how to behave and how to succeed.]]></description>
+</item><item>
     <title>Monoliths are bad... are they?</title>
     <link>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</link>
     <pubDate>Fri, 03 Jul 2020 00:00:00 &#43;0000</pubDate>
