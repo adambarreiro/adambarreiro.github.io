@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>How to execute Jenkins jobs programatically, part 2 - Adam Barreiro Costa | Software Engineer</title><meta name="Description" content="Adam Barreiro Costa | Software Engineer"><meta property="og:title" content="How to execute Jenkins jobs programatically, part 2" />
+<meta property="og:description" content="In this post we saw how to trigger a Jenkins job in a programatic way, with a very simple source code snippet in Groovy to illustrate how to do it. In this post we&rsquo;ll revisit the same topic, but with a Bash script. As you&rsquo;ll see, the script is more sophisticated as it not only runs the job, but also waits the job to complete and retrieve an hypothetical file hosted as an artifact." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/" />
+<meta property="article:published_time" content="2021-11-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to execute Jenkins jobs programatically, part 2"/>
+<meta name="twitter:description" content="In this post we saw how to trigger a Jenkins job in a programatic way, with a very simple source code snippet in Groovy to illustrate how to do it. In this post we&rsquo;ll revisit the same topic, but with a Bash script. As you&rsquo;ll see, the script is more sophisticated as it not only runs the job, but also waits the job to complete and retrieve an hypothetical file hosted as an artifact."/>
+<meta name="application-name" content="Adam Barreiro Costa | Software Engineer">
+<meta name="apple-mobile-web-app-title" content="Adam Barreiro Costa | Software Engineer"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/" /><link rel="prev" href="https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.8235a67a2521ef99fb1e455a5891b022af1653b4ede3cfffcac4e473beee88fbcc1a36bbb3cfdd75fd6df46732032f9d96e30adae9c88b769e1fbf7945cd27e0.css" integrity="sha512-gjWmeiUh75n7HkVaWJGwIq8WU7Tt48//ysTkc77uiPvMGja7s8/ddf1t9GcyAy&#43;dluMK2unIi3aeH795Rc0n4A=="><link rel="stylesheet" href="/css/style.min.89b621a9bf174f6453c265bdcf5f2ffe8feb8bf3555ce4432c220058d367643a9e0aae3b0c211fc83b05a5bdc47d2ce47d74361d8a2becb6f76a7df35e3c3def.css" integrity="sha512-ibYhqb8XT2RTwmW9z18v/o/ri/NVXORDLCIAWNNnZDqeCq47DCEfyDsFpb3EfSzkfXQ2HYor7Lb3an3zXjw97w=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.2fb31670aec534f73036a9cb759abcea54c760b750a996b3e58700804fb97271a6970f094f4dd0076fa8c4bd74d14781e9197364b531086492e3ffbe98d65dc7.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE&#43;5cnGmlw8JT03QB2&#43;oxL100UeB6RlzZLUxCGSS4/&#43;&#43;mNZdxw=="><link rel="stylesheet" href="/lib/animate/animate.min.76826b0bfa1c53c546551c773bdf7cd7ed9a6149f77ee5955afa8b8b553eb40d8c595cecc3e3552aad4fac4345d3733e4d804ff763e7614957147d595b41692f.css" integrity="sha512-doJrC/ocU8VGVRx3O9981&#43;2aYUn3fuWVWvqLi1U&#43;tA2MWVzsw&#43;NVKq1PrENF03M&#43;TYBP92PnYUlXFH1ZW0FpLw=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to execute Jenkins jobs programatically, part 2",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.adambarreiro.com\/2021-11-16-how-to-execute-jenkins-jobs-programatically-2\/"
+        },"genre": "posts","keywords": "jenkins, devops","wordcount":  504 ,
+        "url": "https:\/\/www.adambarreiro.com\/2021-11-16-how-to-execute-jenkins-jobs-programatically-2\/","datePublished": "2021-11-16T00:00:00+00:00","dateModified": "2021-11-16T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Adam"},"author": {
+                "@type": "Person",
+                "name": "Adam"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Adam Barreiro Costa | Software Engineer">Adam Barreiro Costa</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about"> About me </a><a class="menu-item" href="/cv.pdf"> CV </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Adam Barreiro Costa | Software Engineer">Adam Barreiro Costa</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about" title="">About me</a><a class="menu-item" href="/cv.pdf" title="">CV</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">How to execute Jenkins jobs programatically, part 2</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Adam</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-16">2021-11-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;504 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg"
+        data-srcset="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg, /posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg 1.5x, /posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg"
+        title="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>In <a href="/2020-06-03-how-to-execute-jenkins-jobs-programatically/" rel="">this post</a> we saw how to trigger a Jenkins job in a programatic way, with a very simple source code snippet in Groovy to illustrate how to do it. In this post we&rsquo;ll revisit the same topic, but with a Bash script. As you&rsquo;ll see, the script is more <em>sophisticated</em> as it not only runs the job, but also waits the job to complete and retrieve an hypothetical file hosted as an artifact.</p>
+<p>Have a look at the comments for better understanding.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">jenkins_server</span><span class="o">=</span><span class="s1">&#39;https://www.mysuperduperjenkins.com&#39;</span>
+
+<span class="c1"># This part is pretty the same as the method showed in the previous post to retrieve a breadcrumb from Jenkins. Here we use a cookie jar,</span>
+<span class="c1"># which is useful if you don&#39;t need to login to access Jenkins. If you require login, please use the method in the previous post.</span>
+<span class="nv">cookie_jar</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>mktemp<span class="k">)</span><span class="s2">&#34;</span>
+<span class="nv">breadcrumb</span><span class="o">=</span><span class="k">$(</span>curl -s --cookie-jar <span class="s2">&#34;</span><span class="nv">$cookie_jar</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$jenkins_server</span><span class="s2">&#34;</span>/crumbIssuer/api/xml?xpath<span class="o">=</span>concat<span class="se">\(</span>//crumbRequestField,%22:%22,//crumb<span class="se">\)</span><span class="k">)</span>
+<span class="nb">echo</span> <span class="s2">&#34;[INFO] Got Breadcrumb: </span><span class="nv">$breadcrumb</span><span class="s2">&#34;</span>
+
+<span class="c1"># Launch the job with the obtained breadcrumb and cookie. In this example, we show how to launch a parameterized job:</span>
+<span class="nv">queued_job_headers</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>curl -s -H <span class="s2">&#34;</span><span class="nv">$breadcrumb</span><span class="s2">&#34;</span> -X POST --cookie <span class="s2">&#34;</span><span class="nv">$cookie_jar</span><span class="s2">&#34;</span> <span class="se">\
+</span><span class="se"></span>--data <span class="s1">&#39;foo1=bar1&#39;</span> <span class="se">\
+</span><span class="se"></span>--data <span class="s1">&#39;foo2=bar2&#39;</span> <span class="se">\
+</span><span class="se"></span>--data <span class="s1">&#39;foo3=bar3&#39;</span> <span class="se">\
+</span><span class="se"></span>-D - <span class="s2">&#34;</span><span class="nv">$jenkins_server</span><span class="s2">/job/mySuperDuperJob/buildWithParameters&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
+
+<span class="c1"># When you trigger a job, Jenkins returns the queued job URL in a header named &#34;Location&#34;, so we pick it and use this URL</span>
+<span class="c1"># to monitor the queue status. When the job starts executing, &#34;.executable.url&#34; will be populated and we can continue.</span>
+<span class="nv">queue_url</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$queued_job_headers</span><span class="s2">&#34;</span> <span class="p">|</span> grep Location <span class="p">|</span> cut -d<span class="s1">&#39; &#39;</span> -f <span class="m">2</span> <span class="p">|</span> tr -d <span class="s1">&#39;\r&#39;</span><span class="k">)</span>
+<span class="nv">job_url</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$job_url</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="o">]</span>
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="s2">&#34;[INFO] Polling </span><span class="si">${</span><span class="nv">queue_url</span><span class="si">}</span><span class="s2">api/json to retrieve executed job...&#34;</span>
+    sleep <span class="m">3</span>
+    <span class="nv">job_url</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>curl -s <span class="s2">&#34;</span><span class="si">${</span><span class="nv">queue_url</span><span class="si">}</span><span class="s2">api/json&#34;</span> <span class="p">|</span> jq -r .executable.url<span class="k">)</span><span class="s2">&#34;</span>
+<span class="k">done</span>
+
+<span class="c1"># The job is now executing and we have its URL, so we wait for it to finish, again with the API. This is done</span>
+<span class="c1"># by checking the &#34;.result&#34; field in the returned JSON.</span>
+<span class="nb">echo</span> <span class="s2">&#34;[INFO] Triggered job: </span><span class="nv">$job_url</span><span class="s2">&#34;</span>
+<span class="nv">result</span><span class="o">=</span><span class="s1">&#39;null&#39;</span>
+<span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$result</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;null&#39;</span> <span class="o">]</span>
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="s2">&#34;[INFO] Polling </span><span class="si">${</span><span class="nv">job_url</span><span class="si">}</span><span class="s2">api/json to check whether it&#39;s finished...&#34;</span>
+    sleep <span class="m">30</span>
+    <span class="nv">result</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>curl -s <span class="s2">&#34;</span><span class="si">${</span><span class="nv">job_url</span><span class="si">}</span><span class="s2">api/json&#34;</span> <span class="p">|</span> jq -r .result<span class="k">)</span><span class="s2">&#34;</span>
+<span class="k">done</span>
+
+<span class="c1"># The job has finished, so we check the status, that can be SUCCESS, FAILED, UNSTABLE...</span>
+<span class="c1"># we can do a lot of things depending on each case.</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$result</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s1">&#39;SUCCESS&#39;</span> <span class="o">]</span>
+<span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&#34;[ERROR] Job finished with status </span><span class="nv">$result</span><span class="s2">, please check: </span><span class="si">${</span><span class="nv">job_url</span><span class="si">}</span><span class="s2">console&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">fi</span>
+
+<span class="c1"># As last step, we can retrieve an Artifact called foo.txt from the job execution URL.</span>
+<span class="c1"># At this point, job can only be in SUCCESS state.</span>
+<span class="nv">id</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>curl -s <span class="s2">&#34;</span><span class="si">${</span><span class="nv">job_url</span><span class="si">}</span><span class="s2">api/json&#34;</span> <span class="p">|</span> jq -r .id<span class="k">)</span><span class="s2">&#34;</span>
+curl <span class="s2">&#34;</span><span class="si">${</span><span class="nv">job_url</span><span class="si">}</span><span class="s2">artifact/foo.txt&#34;</span> -o <span class="s2">&#34;foo_</span><span class="nv">$id</span><span class="s2">.txt&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;[INFO] Created foo_</span><span class="nv">$id</span><span class="s2">.txt:&#34;</span>
+cat <span class="s2">&#34;foo_</span><span class="nv">$id</span><span class="s2">.txt&#34;</span>
+
+<span class="c1"># Ta-da!!</span>
+<span class="nb">echo</span> <span class="s2">&#34;[INFO] Finished SUCCESSFULLY!&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>I hope this snippet is useful to you as well!</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-11-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/jenkins/">jenkins</a>,&nbsp;<a href="/tags/devops/">devops</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021-03-07-tips-for-taking-the-cka-exam/" class="prev" rel="prev" title="Tips for taking the CKA exam"><i class="fas fa-angle-left fa-fw"></i>Tips for taking the CKA exam</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.72.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Adam</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.01a9044cb72aeb889854b4c442d03cc67db5dcfff848a5bba3c8df88e1ad3a04278cbda7603d1c97981d6759794e673f60aac6a54f53139bbdd044d4dfc2e475.css" integrity="sha512-AakETLcq64iYVLTEQtA8xn213P/4SKW7o8jfiOGtOgQnjL2nYD0cl5gdZ1l5Tmc/YKrGpU9TE5u90ETU38LkdQ=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.2d0f7b71a99aaff94e9624ff32a8dc42ce645a0cba433fdc091cf34735027efd1fa2db024c2f591d768f426255f17bbf3d500b7c967b0437b3979956dffa81c6.css" integrity="sha512-LQ97camar/lOliT/MqjcQs5kWgy6Qz/cCRzzRzUCfv0fotsCTC9ZHXaPQmJV8Xu/PVALfJZ7BDezl5lW3/qBxg=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.e9c0c2a48f70798908fc0c6e65ba47b80e8cd3961f0580a2fee3a84434d3af807a674e9447b49523af87a6a80642a32887c031eb5e1ded2af091bcd8e4bcd935.js" integrity="sha512-6cDCpI9weYkI/AxuZbpHuA6M05YfBYCi/uOoRDTTr4B6Z06UR7SVI6&#43;HpqgGQqMoh8Ax614d7SrwkbzY5LzZNQ=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.95377e01eea2e97083a9e6b4ae56c55a423a5b0cb7e6a298f06c004bbc318ff9a88e6687caa4c1c869aa278c33aae29bdb234b2cd85ae80acf7ad76b7ad61862.js" integrity="sha512-lTd&#43;Ae6i6XCDqea0rlbFWkI6Wwy35qKY8GwAS7wxj/mojmaHyqTByGmqJ4wzquKb2yNLLNha6ArPetdretYYYg=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.1e225d911c92cd786251c5f65707976a2cbcc9e636d767a9fe3e75cd1ff3e483c25f86543b169fea7689ff47502ffda5f992fe07d8a7feee274fc40967fde68a.js" integrity="sha512-HiJdkRySzXhiUcX2VweXaiy8yeY212ep/j51zR/z5IPCX4ZUOxaf6naJ/0dQL/2l&#43;ZL&#43;B9in/u4nT8QJZ/3mig=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.4e60f014b860dd4038646d046f8308c93d4ed4c6fe3b0c399051b4b87a97b1d6f2673f4372f61084aa4680d91a98023a876946199ab65fc7ed389bc5fd78d352.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb&#43;Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.843586ca1f88cb832bf401cecd43f6f98d2254f9ff070c716a84a57848c7fe2d68e0455317fb21d3f0354b28a2f0f58e69efae3ebf93fca1f0ca7a1e6d2b8087.js" integrity="sha512-hDWGyh&#43;Iy4Mr9AHOzUP2&#43;Y0iVPn/BwxxaoSleEjH/i1o4EVTF/sh0/A1Syii8PWOae&#43;uPr&#43;T/KHwynoebSuAhw=="></script><script type="text/javascript" src="/lib/katex/katex.min.da4f96fb738686d777c219c6b77dde93fa00d4cfdaa81e8c8abf9621c0ab4ae202db20fa8935fa22e3dfe6ad681091904f4ea399ae4ae9c6bb5ea6f8bbb52ba3.js" integrity="sha512-2k&#43;W&#43;3OGhtd3whnGt33ek/oA1M/aqB6Mir&#43;WIcCrSuIC2yD6iTX6IuPf5q1oEJGQT06jma5K6ca7Xqb4u7Urow=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.1a2706adb2c15c987691b17e0d80feb025b984f6afa0e7d500a48e13bfaa8180a05537307befc3e0b5de812f4955363bda8bdce549e0e059a5fa2d6e0f7b8ec9.js" integrity="sha512-GicGrbLBXJh2kbF&#43;DYD&#43;sCW5hPavoOfVAKSOE7&#43;qgYCgVTcwe&#43;/D4LXegS9JVTY72ovc5Ung4Fml&#43;i1uD3uOyQ=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.c975ea3858dd8c7347d46343fb510ed236efbde6c0069cc6283eba7639d47e22a560c1391c6314247a0269e1380f93d31b662c4897fa770ab2514bd0bd2d2f68.js" integrity="sha512-yXXqOFjdjHNH1GND&#43;1EO0jbvvebABpzGKD66djnUfiKlYME5HGMUJHoCaeE4D5PTG2YsSJf6dwqyUUvQvS0vaA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/js/theme.min.69ac882c686e101963f9cd3dc6167cee800004e4e9f40dae6f6fbeb3b03fb81ead782f98cc6e6eeec42b70a1b7047c7902e8f0ba3171660e2c2dc59d62965c7a.js" integrity="sha512-aayILGhuEBlj&#43;c09xhZ87oAABOTp9A2ub2&#43;&#43;s7A/uB6teC&#43;YzG5u7sQrcKG3BHx5AujwujFxZg4sLcWdYpZceg=="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-168445862-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168445862-1" async></script></body>
+</html>
