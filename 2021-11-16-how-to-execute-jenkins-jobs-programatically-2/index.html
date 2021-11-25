@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/" />
 <meta property="article:published_time" content="2021-11-16T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-11-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-16T18:26:59+01:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to execute Jenkins jobs programatically, part 2"/>
 <meta name="twitter:description" content="In this post we saw how to trigger a Jenkins job in a programatic way, with a very simple source code snippet in Groovy to illustrate how to do it. In this post we&rsquo;ll revisit the same topic, but with a Bash script. As you&rsquo;ll see, the script is more sophisticated as it not only runs the job, but also waits the job to complete and retrieve an hypothetical file hosted as an artifact."/>
@@ -27,7 +27,7 @@
             "@type": "WebPage",
             "@id": "https:\/\/www.adambarreiro.com\/2021-11-16-how-to-execute-jenkins-jobs-programatically-2\/"
         },"genre": "posts","keywords": "jenkins, devops","wordcount":  504 ,
-        "url": "https:\/\/www.adambarreiro.com\/2021-11-16-how-to-execute-jenkins-jobs-programatically-2\/","datePublished": "2021-11-16T00:00:00+00:00","dateModified": "2021-11-16T00:00:00+00:00","publisher": {
+        "url": "https:\/\/www.adambarreiro.com\/2021-11-16-how-to-execute-jenkins-jobs-programatically-2\/","datePublished": "2021-11-16T00:00:00+00:00","dateModified": "2021-11-16T18:26:59+01:00","publisher": {
             "@type": "Organization",
             "name": "Adam"},"author": {
                 "@type": "Person",
@@ -196,8 +196,8 @@
 <span class="c1"># When you trigger a job, Jenkins returns the queued job URL in a header named &#34;Location&#34;, so we pick it and use this URL</span>
 <span class="c1"># to monitor the queue status. When the job starts executing, &#34;.executable.url&#34; will be populated and we can continue.</span>
 <span class="nv">queue_url</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$queued_job_headers</span><span class="s2">&#34;</span> <span class="p">|</span> grep Location <span class="p">|</span> cut -d<span class="s1">&#39; &#39;</span> -f <span class="m">2</span> <span class="p">|</span> tr -d <span class="s1">&#39;\r&#39;</span><span class="k">)</span>
-<span class="nv">job_url</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-<span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$job_url</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="o">]</span>
+<span class="nv">job_url</span><span class="o">=</span><span class="s1">&#39;null&#39;</span>
+<span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$job_url</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;null&#39;</span> <span class="o">]</span>
 <span class="k">do</span>
     <span class="nb">echo</span> <span class="s2">&#34;[INFO] Polling </span><span class="si">${</span><span class="nv">queue_url</span><span class="si">}</span><span class="s2">api/json to retrieve executed job...&#34;</span>
     sleep <span class="m">3</span>
@@ -239,7 +239,8 @@ cat <span class="s2">&#34;foo_</span><span class="nv">$id</span><span class="s2"
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2021-11-16</span>
+                <span>Updated on 2021-11-16&nbsp;<a class="git-hash" href="https://github.com/adambarreiro/adambarreiro.github.io/commit/7395621ec5913aa8f9497ac60bdf6c21b277d46b" target="_blank" title="commit by Adam Barreiro(adambarreiro@protonmail.com) 7395621ec5913aa8f9497ac60bdf6c21b277d46b: New blog post">
+                                    <i class="fas fa-hashtag fa-fw"></i>7395621</a></span>
             </div>
             <div class="post-info-license"></div>
         </div>
