@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Best Practices on Adam Barreiro Costa | Software Engineer</title>
+    <link>https://www.adambarreiro.com/tags/best-practices/</link>
+    <description>Recent content in Best Practices on Adam Barreiro Costa | Software Engineer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 02 Jun 2020 20:29:53 +0200</lastBuildDate>
+    <atom:link href="https://www.adambarreiro.com/tags/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Domain-Driven Design: The cool parts (Part 2)</title>
+      <link>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/&#34;&gt;first part&lt;/a&gt; of this series we introduced the basic principles that serve as a core of the Domain-Driven Design: The ubiquitous language, the model and the layered architecture. In this post we&amp;rsquo;ll review a first bunch of components used to model the domain: &lt;em&gt;Entities, Value Objects&lt;/em&gt;, &lt;em&gt;Services&lt;/em&gt;, &lt;em&gt;Modules&lt;/em&gt; and &lt;em&gt;Aggregates&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;entities-and-value-objects&#34;&gt;Entities and Value Objects&lt;/h2&gt;&#xA;&lt;p&gt;An &lt;strong&gt;Entity&lt;/strong&gt; is the most basic kind of component in the set of tools to model your domain, and basically it&amp;rsquo;s an object that represents something that has an &lt;strong&gt;unique identity&lt;/strong&gt;, that is &lt;strong&gt;preserved&lt;/strong&gt; over time and thorough different &lt;strong&gt;representations&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Domain-Driven Design: The cool parts (Part 1)</title>
+      <link>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</guid>
+      <description>&lt;p&gt;In this series of posts I&amp;rsquo;ll try to summarize and distill the great and famous book written by Eric Evans, &lt;em&gt;&amp;quot;&lt;a href=&#34;https://dddcommunity.org/book/evans_2003/&#34;&gt;Domain-Driven Design: Tackling Complexity in the Heart of Software&lt;/a&gt;&amp;quot;&lt;/em&gt;, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.&lt;/p&gt;&#xA;&lt;p&gt;In this first part I&amp;rsquo;ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opinion on Adam Barreiro Costa | Software Engineer</title>
+    <link>https://www.adambarreiro.com/tags/opinion/</link>
+    <description>Recent content in Opinion on Adam Barreiro Costa | Software Engineer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 02 Jun 2020 20:29:53 +0200</lastBuildDate>
+    <atom:link href="https://www.adambarreiro.com/tags/opinion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My experience with hiring processes</title>
+      <link>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</guid>
+      <description>&lt;p&gt;In some weeks I&amp;rsquo;ll be starting a new adventure in another company. In this post I&amp;rsquo;m sharing some tips and ideas about hiring processes after sending countless resumes, facing innumerable interviews, technical challenges, and finally being hired by a promising team.&lt;/p&gt;&#xA;&lt;h2 id=&#34;my-previous-experience&#34;&gt;My previous experience&lt;/h2&gt;&#xA;&lt;p&gt;Before I decided to leave my current employer I participated in no more than three hiring processes, so we can say that I had almost no experience at all in terms of how to behave and how to succeed. When I decided to start this journey I found that everyone was recommending the &lt;em&gt;&lt;a href=&#34;http://www.crackingthecodinginterview.com/&#34;&gt;Cracking the Code Interview&lt;/a&gt;&lt;/em&gt; book, so I decided to give it a try with a non-exhaustive diagonal read. If you have time I recommend you to do the same (or even better, to read it entirely). It contains a lot of worthy information even if you aren&amp;rsquo;t looking for a job: it gives you behavioral recommendations, refreshes your knowledge about algorithms and data structures, and unveils the most common questions you will face during interviews.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Monoliths are bad... are they?</title>
+      <link>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</guid>
+      <description>&lt;p&gt;Some things happened recently that made me write this post:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;First one, &lt;a href=&#34;https://hey.com/&#34;&gt;HEY&lt;/a&gt; was released. If you are not from this planet and never heard about HEY, you only need to know that it is a new and peculiar email service that made a bit of noise in social networks due to &lt;a href=&#34;https://www.theverge.com/2020/6/16/21293419/hey-apple-rejection-ios-app-store-dhh-gangsters-antitrust&#34;&gt;some issues with Apple&lt;/a&gt;. Anyway, the point is that &lt;strong&gt;David Heinemeier Hansson&lt;/strong&gt; made some statements about its architecture on Twitter&amp;hellip; he declared &lt;a href=&#34;https://twitter.com/dhh/status/1275904559001464832&#34;&gt;it was a monolithic application&lt;/a&gt;. I think everyone was expecting it to be something really complex, but it turns out that &lt;a href=&#34;https://m.signalvnoise.com/the-majestic-monolith-can-become-the-citadel/&#34;&gt;all apps from Basecamp are monoliths&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

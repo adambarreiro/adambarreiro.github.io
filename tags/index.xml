@@ -1,11 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on </title>
+    <title>Tags on Adam Barreiro Costa | Software Engineer</title>
     <link>https://www.adambarreiro.com/tags/</link>
-    <description>Recent content in Tags on </description>
+    <description>Recent content in Tags on Adam Barreiro Costa | Software Engineer</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Nov 2021 19:03:39 +0100</lastBuildDate>
     <atom:link href="https://www.adambarreiro.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Devops</title>
+      <link>https://www.adambarreiro.com/tags/devops/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jenkins</title>
+      <link>https://www.adambarreiro.com/tags/jenkins/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://www.adambarreiro.com/tags/kubernetes/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sre</title>
+      <link>https://www.adambarreiro.com/tags/sre/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/sre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Human-Resources</title>
+      <link>https://www.adambarreiro.com/tags/human-resources/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/human-resources/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interviews</title>
+      <link>https://www.adambarreiro.com/tags/interviews/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/interviews/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Opinion</title>
+      <link>https://www.adambarreiro.com/tags/opinion/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/opinion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>https://www.adambarreiro.com/tags/architecture/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Best Practices</title>
+      <link>https://www.adambarreiro.com/tags/best-practices/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/best-practices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ddd</title>
+      <link>https://www.adambarreiro.com/tags/ddd/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.adambarreiro.com/tags/ddd/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
