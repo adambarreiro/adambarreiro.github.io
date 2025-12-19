@@ -3,13 +3,14 @@
         <title>Adam Barreiro Costa | Software Engineer</title>
         <link>https://www.adambarreiro.com/</link>
         <description>Adam Barreiro Costa | Software Engineer</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 16 Nov 2021 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>adambarreiro@protonmail.com (Adam)</managingEditor>
+            <webMaster>adambarreiro@protonmail.com (Adam)</webMaster><lastBuildDate>Tue, 16 Nov 2021 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://www.adambarreiro.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>How to execute Jenkins jobs programatically, part 2</title>
     <link>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</link>
     <pubDate>Tue, 16 Nov 2021 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>adambarreiro@protonmail.com (Adam)</author>
     <guid>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg" referrerpolicy="no-referrer">
@@ -19,7 +20,7 @@
     <title>Tips for taking the CKA exam</title>
     <link>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</link>
     <pubDate>Sun, 07 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>adambarreiro@protonmail.com (Adam)</author>
     <guid>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/2021-03-07-tips-for-taking-the-cka-exam/cka.jpg" referrerpolicy="no-referrer">
@@ -29,7 +30,7 @@
     <title>My experience with hiring processes</title>
     <link>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</link>
     <pubDate>Thu, 11 Feb 2021 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>adambarreiro@protonmail.com (Adam)</author>
     <guid>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/2021-02-11-my-experience-with-hiring-processes/harold.jpg" referrerpolicy="no-referrer">
@@ -41,7 +42,7 @@
     <title>Monoliths are bad... are they?</title>
     <link>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</link>
     <pubDate>Fri, 03 Jul 2020 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>adambarreiro@protonmail.com (Adam)</author>
     <guid>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/2020-07-03-monoliths-are-bad-are-they/building.jpg" referrerpolicy="no-referrer">
@@ -54,7 +55,7 @@
     <title>Domain-Driven Design: The cool parts (Part 2)</title>
     <link>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</link>
     <pubDate>Wed, 10 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>adambarreiro@protonmail.com (Adam)</author>
     <guid>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg" referrerpolicy="no-referrer">
@@ -66,7 +67,7 @@
     <title>How to execute Jenkins jobs programatically</title>
     <link>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</link>
     <pubDate>Wed, 03 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>adambarreiro@protonmail.com (Adam)</author>
     <guid>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg" referrerpolicy="no-referrer">
@@ -76,7 +77,7 @@
     <title>Domain-Driven Design: The cool parts (Part 1)</title>
     <link>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</link>
     <pubDate>Thu, 05 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>adambarreiro@protonmail.com (Adam)</author>
     <guid>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg" referrerpolicy="no-referrer">

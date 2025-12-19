@@ -3,5 +3,6 @@
         <title>Categories - Category - Adam Barreiro Costa | Software Engineer</title>
         <link>https://www.adambarreiro.com/categories/</link>
         <description>Categories - Category - Adam Barreiro Costa | Software Engineer</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://www.adambarreiro.com/categories/" rel="self" type="application/rss+xml" /></channel>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>adambarreiro@protonmail.com (Adam)</managingEditor>
+            <webMaster>adambarreiro@protonmail.com (Adam)</webMaster><atom:link href="https://www.adambarreiro.com/categories/" rel="self" type="application/rss+xml" /></channel>
 </rss>
