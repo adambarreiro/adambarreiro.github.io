@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Architecture on Adam Barreiro Costa | Software Engineer</title>
-    <link>https://www.adambarreiro.com/tags/architecture/</link>
-    <description>Recent content in Architecture on Adam Barreiro Costa | Software Engineer</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2020 20:29:53 +0200</lastBuildDate>
-    <atom:link href="https://www.adambarreiro.com/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Monoliths are bad... are they?</title>
-      <link>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</guid>
-      <description>&lt;p&gt;Some things happened recently that made me write this post:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;First one, &lt;a href=&#34;https://hey.com/&#34;&gt;HEY&lt;/a&gt; was released. If you are not from this planet and never heard about HEY, you only need to know that it is a new and peculiar email service that made a bit of noise in social networks due to &lt;a href=&#34;https://www.theverge.com/2020/6/16/21293419/hey-apple-rejection-ios-app-store-dhh-gangsters-antitrust&#34;&gt;some issues with Apple&lt;/a&gt;. Anyway, the point is that &lt;strong&gt;David Heinemeier Hansson&lt;/strong&gt; made some statements about its architecture on Twitter&amp;hellip; he declared &lt;a href=&#34;https://twitter.com/dhh/status/1275904559001464832&#34;&gt;it was a monolithic application&lt;/a&gt;. I think everyone was expecting it to be something really complex, but it turns out that &lt;a href=&#34;https://m.signalvnoise.com/the-majestic-monolith-can-become-the-citadel/&#34;&gt;all apps from Basecamp are monoliths&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Architecture - Tag - Adam Barreiro Costa | Software Engineer</title>
+        <link>https://www.adambarreiro.com/tags/architecture/</link>
+        <description>Architecture - Tag - Adam Barreiro Costa | Software Engineer</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 03 Jul 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://www.adambarreiro.com/tags/architecture/" rel="self" type="application/rss+xml" /><item>
+    <title>Monoliths are bad... are they?</title>
+    <link>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</link>
+    <pubDate>Fri, 03 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-07-03-monoliths-are-bad-are-they/building.jpg" referrerpolicy="no-referrer">
+            </div><p>Some things happened recently that made me write this post:</p>
+<ul>
+<li>
+<p>First one, <a href="https://hey.com/" target="_blank" rel="noopener noreffer ">HEY</a> was released. If you are not from this planet and never heard about HEY, you only need to know that it is a new and peculiar email service that made a bit of noise in social networks due to <a href="https://www.theverge.com/2020/6/16/21293419/hey-apple-rejection-ios-app-store-dhh-gangsters-antitrust" target="_blank" rel="noopener noreffer ">some issues with Apple</a>. Anyway, the point is that <strong>David Heinemeier Hansson</strong> made some statements about its architecture on Twitter&hellip; he declared <a href="https://twitter.com/dhh/status/1275904559001464832" target="_blank" rel="noopener noreffer ">it was a monolithic application</a>. I think everyone was expecting it to be something really complex, but it turns out that <a href="https://m.signalvnoise.com/the-majestic-monolith-can-become-the-citadel/" target="_blank" rel="noopener noreffer ">all apps from Basecamp are monoliths</a>.</p>]]></description>
+</item>
+</channel>
 </rss>

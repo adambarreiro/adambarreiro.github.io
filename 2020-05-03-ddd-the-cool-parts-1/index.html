@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Domain-Driven Design: The cool parts (Part 1) - Adam Barreiro Costa | Software Engineer</title><meta name="Description" content="Adam Barreiro Costa | Software Engineer"><meta property="og:url" content="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/">
+  <meta property="og:site_name" content="Adam Barreiro Costa | Software Engineer">
+  <meta property="og:title" content="Domain-Driven Design: The cool parts (Part 1)">
+  <meta property="og:description" content="In this series of posts I’ll try to summarize and distill the great and famous book written by Eric Evans, &#34;Domain-Driven Design: Tackling Complexity in the Heart of Software&#34;, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.
+In this first part I’ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-03-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-06-02T20:29:53+02:00">
+    <meta property="article:tag" content="Ddd">
+    <meta property="article:tag" content="Best Practices">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Domain-Driven Design: The cool parts (Part 1)">
+  <meta name="twitter:description" content="In this series of posts I’ll try to summarize and distill the great and famous book written by Eric Evans, &#34;Domain-Driven Design: Tackling Complexity in the Heart of Software&#34;, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.
+In this first part I’ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" /><link rel="next" href="https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/" /><link rel="stylesheet" href="/css/style.min.45d985982cbcb7b299cef282bc3aa87c00d6b39f2721328179aa452735e9ee6d223ba93c57383e09a475b81ac91a7b10d2860f732b867d11ff6b2374fc5959c5.css" integrity="sha512-RdmFmCy8t7KZzvKCvDqofADWs58nITKBeapFJzXp7m0iO6k8Vzg+CaR1uBrJGnsQ0oYPcyuGfRH/ayN0/FlZxQ=="><link rel="preload" href="/lib/fontawesome-free/css/all.min.12fbfce0caf892a54644d4a02062ff17f6880ea41bef1436bdcadd230c5f8d38521fc09247b3c111a902af9d4293ec3efd4eacc14d889b5bd55f449593d00186.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.12fbfce0caf892a54644d4a02062ff17f6880ea41bef1436bdcadd230c5f8d38521fc09247b3c111a902af9d4293ec3efd4eacc14d889b5bd55f449593d00186.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="></noscript><link rel="preload" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Domain-Driven Design: The cool parts (Part 1)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.adambarreiro.com\/2020-05-03-ddd-the-cool-parts-1\/"
+        },"genre": "posts","keywords": "ddd, best practices","wordcount":  733 ,
+        "url": "https:\/\/www.adambarreiro.com\/2020-05-03-ddd-the-cool-parts-1\/","datePublished": "2020-03-05T00:00:00+00:00","dateModified": "2020-06-02T20:29:53+02:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "xxxx"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Adam Barreiro Costa | Software Engineer">Adam Barreiro Costa</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about"> About me </a><a class="menu-item" href="/cv.pdf"> CV </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Adam Barreiro Costa | Software Engineer">Adam Barreiro Costa</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about" title="">About me</a><a class="menu-item" href="/cv.pdf" title="">CV</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Domain-Driven Design: The cool parts (Part 1)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xxxx</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-03-05">2020-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;733 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg"
+        data-srcset="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg, /posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg 1.5x, /posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg"
+        title="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg" width="5616" height="3744" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#work-as-one-collaborative-team">Work as one collaborative team</a></li>
+    <li><a href="#but-what-is-themodel">But… what is the model?</a></li>
+    <li><a href="#implementing-themodel">Implementing the model</a></li>
+    <li><a href="#and-thats-it-for-today">And that&rsquo;s it for today!</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>In this series of posts I&rsquo;ll try to summarize and distill the great and famous book written by Eric Evans, <em>&quot;<a href="https://dddcommunity.org/book/evans_2003/" target="_blank" rel="noopener noreffer ">Domain-Driven Design: Tackling Complexity in the Heart of Software</a>&quot;</em>, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.</p>
+<p>In this first part I&rsquo;ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach.</p>
+<h2 id="work-as-one-collaborative-team">Work as one collaborative team</h2>
+<p>First of all, the main requirement for anyone planning to work using DDD is to be willing to collaborate as one team and one brain. This means that there can&rsquo;t be a separation between <strong>domain experts</strong> (this is, business experts, product owners… you name it) and <strong>developers</strong> (engineers, architects…). This close relationship will make developers understand business and business understand developers. Think about it, we as developers are very comfortable talking about classes, patterns and architectural elements… but domain experts normally don&rsquo;t understand these concepts, as well as we don&rsquo;t usually tend to care about the business rules, requirements, corner use cases and so on.</p>
+<p>The idea is that together, domain experts and developers can come to a final situation in which <strong>they speak the same language</strong>. Through several brainstormings, talks, reviews and refinements, the <strong>domain model</strong> will start to emerge using this common language (aka <em>&ldquo;ubiquitous language&rdquo;</em>, in words of Eric Evans). For example, a developer will understand what a &ldquo;cargo shipment&rdquo; is, or a &ldquo;VIP customer&rdquo;, or a &ldquo;health insurance&rdquo;, etc; for that company and their business colleagues. In addition, a domain expert will start to understand the relationships that developer is creating across classes, and what these classes do mean.</p>
+<p>With several iterations, domain experts and developers should refine the model, <strong>continuously learning</strong>, filling gaps and fixing contradictions, working as one unit.</p>
+<h2 id="but-what-is-themodel">But… what is the model?</h2>
+<p>The model is like the skeleton, structure or <strong>backbone that gives shape to the common language</strong> that has been created by domain experts and developers. It can be done using different tools, like UML diagrams that represent classes, rules, operations, interactions, relationships… but we should take into account that the most important thing is the language and the expresiveness of the model. If something is not understandable through UML, use explanatory or auxiliary diagrams, use text, drawings… anything that supports and enriches the model and is supported by the language.</p>
+<h2 id="implementing-themodel">Implementing the model</h2>
+<p>As we need to finally implement the model, the design of the solution has to be <strong>bounded</strong> with it. This means, any change to the model should be reflected in the design (and supported by the language!) and viceversa.</p>
+<p>This implementation has to be doable, of course. Therefore, <strong>models must be practical</strong> (no hundreds of thousands of classes, please), and if we want the solutions and systems to last, the developers and domain experts should continue working closely throughout all the project lifecycle.</p>
+<p>In terms of architecture, <strong>it&rsquo;s crucial to isolate the domain in its own layer</strong>, no matter which type of architecture we choose. For example, it&rsquo;s common to feel the temptation of including business logic in UI. Wrong! Spreading the business logic across layers will make the solution hard to mantain and hard to understand. If we make a change to the business logic, we want to impact the less possible layers and components in our architecture.</p>
+<p>In his book, Eric Evans talks about the following layered architecture as reference, from top to bottom:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png"
+        data-srcset="/posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png, /posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png 1.5x, /posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png 2x"
+        data-sizes="auto"
+        alt="/posts/2020-05-03-ddd-the-cool-parts-1/layered-architecture.png"
+        title="Layered Architecture" width="704" height="694" /></p>
+<ul>
+<li><strong>UI layer:</strong> Shows info to the users and interprets commands.</li>
+<li><strong>Application layer:</strong> Defines jobs and coordinates tasks, but doesn&rsquo;t contain business logic.</li>
+<li><strong>Domain layer:</strong> Represents the business logic. Remember, <strong>isolated</strong>!</li>
+<li><strong>Infrastructure layer:</strong> Provides technical capabilities for the upper layers. For example, database configurations, transactions, caches&hellip;</li>
+</ul>
+<p>And one important aspect of the development process is that we tend to use frameworks a lot. So we need to take into account that we should use frameworks that allow to put the focus in the domain model, and most important, to isolate it.</p>
+<h2 id="and-thats-it-for-today">And that&rsquo;s it for today!</h2>
+<p>In following parts of this series about DDD I&rsquo;ll explore the implementation details, how we can express this model through several elements, such as entities, value objects, services, modules and more.</p>
+<hr>
+<p><em>Cover by <a href="https://unsplash.com/@wilhelmgunkel?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener noreffer ">Wilhelm Gunkel</a> on <a href="https://unsplash.com/s/photos/onion?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener noreffer ">Unsplash</a></em></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-06-02&nbsp;<a class="git-hash" href="https://github.com/adambarreiro/adambarreiro.github.io/commit/2434c01ffd40699e3d34fe521cdc44b1eb70b179" target="_blank" title="commit by Adam Barreiro(adambarreiro@protonmail.com) 2434c01ffd40699e3d34fe521cdc44b1eb70b179: Published blog">
+                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>2434c01</a></span>
+            </div><div id="page-views" class="post-info-mod">
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" data-title="Domain-Driven Design: The cool parts (Part 1)" data-hashtags="ddd,best practices"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" data-title="Domain-Driven Design: The cool parts (Part 1)"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" data-hashtag="ddd"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" data-title="Domain-Driven Design: The cool parts (Part 1)"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" data-title="Domain-Driven Design: The cool parts (Part 1)"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" data-title="Domain-Driven Design: The cool parts (Part 1)" data-image="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/" data-title="Domain-Driven Design: The cool parts (Part 1)" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=https%3a%2f%2fwww.adambarreiro.com%2f2020-05-03-ddd-the-cool-parts-1%2f&amp;text=Domain-Driven%20Design%3a%20The%20cool%20parts%20%28Part%201%29" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/ddd/">Ddd</a>,&nbsp;<a href="/tags/best-practices/">Best Practices</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/2020-06-03-how-to-execute-jenkins-jobs-programatically/" class="next" rel="next" title="How to execute Jenkins jobs programatically">How to execute Jenkins jobs programatically<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.142.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.8fee1bb91734542a6701c61b7be516ff2eb2df248bf4e4591aacc8f4e9df40c7ca9e9c0b3f657b166f5f13e69a8fb50a139b3babcef20aeeea18f0fbcd4169fb.css" integrity="sha512-j+4buRc0VCpnAcYbe+UW/y6y3ySL9ORZGqzI9OnfQMfKnpwLP2V7Fm9fE+aaj7UKE5s7q87yCu7qGPD7zUFp+w=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.2d0f7b71a99aaff94e9624ff32a8dc42ce645a0cba433fdc091cf34735027efd1fa2db024c2f591d768f426255f17bbf3d500b7c967b0437b3979956dffa81c6.css" integrity="sha512-LQ97camar/lOliT/MqjcQs5kWgy6Qz/cCRzzRzUCfv0fotsCTC9ZHXaPQmJV8Xu/PVALfJZ7BDezl5lW3/qBxg=="><script src="/lib/autocomplete/autocomplete.min.7e654c67e741180b83f7b4d829967003fea37a5d5014f549f0a3d7f945d2b73e73e22a1dd04a7b68712c846f004232f3030d07305784fab026100af12af8f0ac.js" integrity="sha512-fmVMZ+dBGAuD97TYKZZwA/6jel1QFPVJ8KPX+UXStz5z4iod0Ep7aHEshG8AQjLzAw0HMFeE+rAmEArxKvjwrA=="></script><script src="/lib/lunr/lunr.min.fc0fb62076d4d0ce9ce5f033fbd78081d0caa2679c50c08985bfa2e28465ddf3f36a2ecd3f7983d9d45cdca68a67a362ab9267a3845517e8699b2a59f5c2568d.js" integrity="sha512-/A+2IHbU0M6c5fAz+9eAgdDKomecUMCJhb+i4oRl3fPzai7NP3mD2dRc3KaKZ6Niq5Jno4RVF+hpmypZ9cJWjQ=="></script><script src="/lib/lazysizes/lazysizes.min.ab9f37a692ab09173b3793b49f69f352227eb2e52fec4b752467a5b386d739a30541c6a63e4f478dd5249d9bae16304db3bb6c32e69d81ee64f51cdd98efb519.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="></script><script src="/lib/clipboard/clipboard.min.ecee695e9734a0246bc64f1151f0d81609f49ced6dfa32ee20e41d38c469e003c1eee678bd28eca73a79cba603b43b385735124db5b304567f2ca2619f214e2b.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw=="></script><script src="/lib/sharer/sharer.min.f801dbb94bf494b49831b7ce6408c3a68dbc6d00ad6387e085fc7717f2ba675ce061137d6022ee2931f2463730fbdc67b4dcee95d5e9e8b7afd620020d390806.js" integrity="sha512-+AHbuUv0lLSYMbfOZAjDpo28bQCtY4fghfx3F/K6Z1zgYRN9YCLuKTHyRjcw+9xntNzuldXp6Lev1iACDTkIBg=="></script><script src="/lib/katex/katex.min.8c68eaeb75cfdcfac071717a969e1b9d9230ad52c6a2ac21ff846eaf6a258364cbb79e5e3552e32c280faeb4f4eda4d7c5bd1492e30a961c737e1e5305300281.js" integrity="sha512-jGjq63XP3PrAcXF6lp4bnZIwrVLGoqwh/4Rur2olg2TLt55eNVLjLCgPrrT07aTXxb0UkuMKlhxzfh5TBTACgQ=="></script><script src="/lib/katex/contrib/auto-render.min.e9b2833d28623d18c071d78ef13e9c79d695122d296af3dbcee7bf1bf6518b0565bab59939267fbc8f5faf696193c20f5caef3e7501969cfb306f6738032730d.js" integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac+zBvZzgDJzDQ=="></script><script src="/lib/katex/contrib/copy-tex.min.895ad99f7d8fdb0683cd271c02584953bd0542c6d4956c9feebaa16673683a45d5884f5253e3db33f8f74a86cc464477497656fb36e96a558137311bdb7f32d6.js" integrity="sha512-iVrZn32P2waDzSccAlhJU70FQsbUlWyf7rqhZnNoOkXViE9SU+PbM/j3SobMRkR3SXZW+zbpalWBNzEb238y1g=="></script><script src="/lib/katex/contrib/mhchem.min.0a5e1bcfb46df69a607013906b8cfdeaadd4a80cc7801ccd0e6ebabb6fa50ded19250bb4160cfeea33b9ec4f8866ace5846cdf34163efa983b51efa2a2968bae.js" integrity="sha512-Cl4bz7Rt9ppgcBOQa4z96q3UqAzHgBzNDm66u2+lDe0ZJQu0Fgz+6jO57E+IZqzlhGzfNBY++pg7Ue+iopaLrg=="></script><script src="/lib/cookieconsent/cookieconsent.min.c975ea3858dd8c7347d46343fb510ed236efbde6c0069cc6283eba7639d47e22a560c1391c6314247a0269e1380f93d31b662c4897fa770ab2514bd0bd2d2f68.js" integrity="sha512-yXXqOFjdjHNH1GND+1EO0jbvvebABpzGKD66djnUfiKlYME5HGMUJHoCaeE4D5PTG2YsSJf6dwqyUUvQvS0vaA=="></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script src="/js/theme.min.1f80a466a39f1c5c9b9eefe9f5557f4b3751c3872328a0aaa0ef69e8116d32c541a046dc58293acb59b9b3590d0105b7a30be02a1615d717665cc23819af6a0c.js" integrity="sha512-H4CkZqOfHFybnu/p9VV/SzdRw4cjKKCqoO9p6BFtMsVBoEbcWCk6y1m5s1kNAQW3owvgKhYV1xdmXMI4Ga9qDA=="></script></body>
+</html>

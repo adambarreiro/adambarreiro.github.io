@@ -1,61 +1,85 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Adam Barreiro Costa | Software Engineer</title>
-    <link>https://www.adambarreiro.com/posts/</link>
-    <description>Recent content in Posts on Adam Barreiro Costa | Software Engineer</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 25 Nov 2021 19:03:39 +0100</lastBuildDate>
-    <atom:link href="https://www.adambarreiro.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to execute Jenkins jobs programatically, part 2</title>
-      <link>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</link>
-      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</guid>
-      <description>&lt;p&gt;In &lt;a href=&#34;https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/&#34;&gt;this post&lt;/a&gt; we saw how to trigger a Jenkins job in a programatic way, with a very simple source code snippet in Groovy to illustrate how to do it. In this post we&amp;rsquo;ll revisit the same topic, but with a Bash script. As you&amp;rsquo;ll see, the script is more &lt;em&gt;sophisticated&lt;/em&gt; as it not only runs the job, but also waits the job to complete and retrieve an hypothetical file hosted as an artifact.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Tips for taking the CKA exam</title>
-      <link>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</link>
-      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</guid>
-      <description>&lt;p&gt;Some days ago I decided to take the Certified Kubernetes Administrator exam, after postponing it for almost a year. My voucher was about to expire, and one of the reasons that I took so long was that the more I read about it the more scared I was to schedule it. Was this fear reasonable? Well, I scored 90% and I can assure you I&amp;rsquo;m not a Kubernetes expert. With this post, I hope I help you to clear your doubts to pass the exam.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>My experience with hiring processes</title>
-      <link>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</link>
-      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</guid>
-      <description>&lt;p&gt;In some weeks I&amp;rsquo;ll be starting a new adventure in another company. In this post I&amp;rsquo;m sharing some tips and ideas about hiring processes after sending countless resumes, facing innumerable interviews, technical challenges, and finally being hired by a promising team.&lt;/p&gt;&#xA;&lt;h2 id=&#34;my-previous-experience&#34;&gt;My previous experience&lt;/h2&gt;&#xA;&lt;p&gt;Before I decided to leave my current employer I participated in no more than three hiring processes, so we can say that I had almost no experience at all in terms of how to behave and how to succeed. When I decided to start this journey I found that everyone was recommending the &lt;em&gt;&lt;a href=&#34;http://www.crackingthecodinginterview.com/&#34;&gt;Cracking the Code Interview&lt;/a&gt;&lt;/em&gt; book, so I decided to give it a try with a non-exhaustive diagonal read. If you have time I recommend you to do the same (or even better, to read it entirely). It contains a lot of worthy information even if you aren&amp;rsquo;t looking for a job: it gives you behavioral recommendations, refreshes your knowledge about algorithms and data structures, and unveils the most common questions you will face during interviews.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Monoliths are bad... are they?</title>
-      <link>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</guid>
-      <description>&lt;p&gt;Some things happened recently that made me write this post:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;First one, &lt;a href=&#34;https://hey.com/&#34;&gt;HEY&lt;/a&gt; was released. If you are not from this planet and never heard about HEY, you only need to know that it is a new and peculiar email service that made a bit of noise in social networks due to &lt;a href=&#34;https://www.theverge.com/2020/6/16/21293419/hey-apple-rejection-ios-app-store-dhh-gangsters-antitrust&#34;&gt;some issues with Apple&lt;/a&gt;. Anyway, the point is that &lt;strong&gt;David Heinemeier Hansson&lt;/strong&gt; made some statements about its architecture on Twitter&amp;hellip; he declared &lt;a href=&#34;https://twitter.com/dhh/status/1275904559001464832&#34;&gt;it was a monolithic application&lt;/a&gt;. I think everyone was expecting it to be something really complex, but it turns out that &lt;a href=&#34;https://m.signalvnoise.com/the-majestic-monolith-can-become-the-citadel/&#34;&gt;all apps from Basecamp are monoliths&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Domain-Driven Design: The cool parts (Part 2)</title>
-      <link>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</guid>
-      <description>&lt;p&gt;In the &lt;a href=&#34;https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/&#34;&gt;first part&lt;/a&gt; of this series we introduced the basic principles that serve as a core of the Domain-Driven Design: The ubiquitous language, the model and the layered architecture. In this post we&amp;rsquo;ll review a first bunch of components used to model the domain: &lt;em&gt;Entities, Value Objects&lt;/em&gt;, &lt;em&gt;Services&lt;/em&gt;, &lt;em&gt;Modules&lt;/em&gt; and &lt;em&gt;Aggregates&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;entities-and-value-objects&#34;&gt;Entities and Value Objects&lt;/h2&gt;&#xA;&lt;p&gt;An &lt;strong&gt;Entity&lt;/strong&gt; is the most basic kind of component in the set of tools to model your domain, and basically it&amp;rsquo;s an object that represents something that has an &lt;strong&gt;unique identity&lt;/strong&gt;, that is &lt;strong&gt;preserved&lt;/strong&gt; over time and thorough different &lt;strong&gt;representations&lt;/strong&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to execute Jenkins jobs programatically</title>
-      <link>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</link>
-      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</guid>
-      <description>&lt;p&gt;The most common usage of Jenkins is to trigger job builds automatically in response to changes in a source code repository. In some other cases you may need to trigger jobs because of any other reason. For example, imagine that you want to execute a Jenkins job after your alert management system detects something is wrong, so it can execute a pipeline that fixes everything and the alert is resolved. This is just an example, but the idea of this post is to be able to &lt;strong&gt;execute a Jenkins job programatically&lt;/strong&gt;, and not using the GUI or anything related to Jenkins itself.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Domain-Driven Design: The cool parts (Part 1)</title>
-      <link>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</guid>
-      <description>&lt;p&gt;In this series of posts I&amp;rsquo;ll try to summarize and distill the great and famous book written by Eric Evans, &lt;em&gt;&amp;quot;&lt;a href=&#34;https://dddcommunity.org/book/evans_2003/&#34;&gt;Domain-Driven Design: Tackling Complexity in the Heart of Software&lt;/a&gt;&amp;quot;&lt;/em&gt;, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.&lt;/p&gt;&#xA;&lt;p&gt;In this first part I&amp;rsquo;ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach.&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Adam Barreiro Costa | Software Engineer</title>
+        <link>https://www.adambarreiro.com/posts/</link>
+        <description>All Posts | Adam Barreiro Costa | Software Engineer</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 16 Nov 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://www.adambarreiro.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>How to execute Jenkins jobs programatically, part 2</title>
+    <link>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</link>
+    <pubDate>Tue, 16 Nov 2021 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg" referrerpolicy="no-referrer">
+            </div><p>In <a href="/2020-06-03-how-to-execute-jenkins-jobs-programatically/" rel="">this post</a> we saw how to trigger a Jenkins job in a programatic way, with a very simple source code snippet in Groovy to illustrate how to do it. In this post we&rsquo;ll revisit the same topic, but with a Bash script. As you&rsquo;ll see, the script is more <em>sophisticated</em> as it not only runs the job, but also waits the job to complete and retrieve an hypothetical file hosted as an artifact.</p>]]></description>
+</item>
+<item>
+    <title>Tips for taking the CKA exam</title>
+    <link>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</link>
+    <pubDate>Sun, 07 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2021-03-07-tips-for-taking-the-cka-exam/cka.jpg" referrerpolicy="no-referrer">
+            </div><p>Some days ago I decided to take the Certified Kubernetes Administrator exam, after postponing it for almost a year. My voucher was about to expire, and one of the reasons that I took so long was that the more I read about it the more scared I was to schedule it. Was this fear reasonable? Well, I scored 90% and I can assure you I&rsquo;m not a Kubernetes expert. With this post, I hope I help you to clear your doubts to pass the exam.</p>]]></description>
+</item>
+<item>
+    <title>My experience with hiring processes</title>
+    <link>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</link>
+    <pubDate>Thu, 11 Feb 2021 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2021-02-11-my-experience-with-hiring-processes/harold.jpg" referrerpolicy="no-referrer">
+            </div><p>In some weeks I&rsquo;ll be starting a new adventure in another company. In this post I&rsquo;m sharing some tips and ideas about hiring processes after sending countless resumes, facing innumerable interviews, technical challenges, and finally being hired by a promising team.</p>
+<h2 id="my-previous-experience">My previous experience</h2>
+<p>Before I decided to leave my current employer I participated in no more than three hiring processes, so we can say that I had almost no experience at all in terms of how to behave and how to succeed. When I decided to start this journey I found that everyone was recommending the <em><a href="http://www.crackingthecodinginterview.com/" target="_blank" rel="noopener noreffer ">Cracking the Code Interview</a></em> book, so I decided to give it a try with a non-exhaustive diagonal read. If you have time I recommend you to do the same (or even better, to read it entirely). It contains a lot of worthy information even if you aren&rsquo;t looking for a job: it gives you behavioral recommendations, refreshes your knowledge about algorithms and data structures, and unveils the most common questions you will face during interviews.</p>]]></description>
+</item>
+<item>
+    <title>Monoliths are bad... are they?</title>
+    <link>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</link>
+    <pubDate>Fri, 03 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-07-03-monoliths-are-bad-are-they/building.jpg" referrerpolicy="no-referrer">
+            </div><p>Some things happened recently that made me write this post:</p>
+<ul>
+<li>
+<p>First one, <a href="https://hey.com/" target="_blank" rel="noopener noreffer ">HEY</a> was released. If you are not from this planet and never heard about HEY, you only need to know that it is a new and peculiar email service that made a bit of noise in social networks due to <a href="https://www.theverge.com/2020/6/16/21293419/hey-apple-rejection-ios-app-store-dhh-gangsters-antitrust" target="_blank" rel="noopener noreffer ">some issues with Apple</a>. Anyway, the point is that <strong>David Heinemeier Hansson</strong> made some statements about its architecture on Twitter&hellip; he declared <a href="https://twitter.com/dhh/status/1275904559001464832" target="_blank" rel="noopener noreffer ">it was a monolithic application</a>. I think everyone was expecting it to be something really complex, but it turns out that <a href="https://m.signalvnoise.com/the-majestic-monolith-can-become-the-citadel/" target="_blank" rel="noopener noreffer ">all apps from Basecamp are monoliths</a>.</p>]]></description>
+</item>
+<item>
+    <title>Domain-Driven Design: The cool parts (Part 2)</title>
+    <link>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</link>
+    <pubDate>Wed, 10 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg" referrerpolicy="no-referrer">
+            </div><p>In the <a href="/2020-05-03-ddd-the-cool-parts-1/" rel="">first part</a> of this series we introduced the basic principles that serve as a core of the Domain-Driven Design: The ubiquitous language, the model and the layered architecture. In this post we&rsquo;ll review a first bunch of components used to model the domain: <em>Entities, Value Objects</em>, <em>Services</em>, <em>Modules</em> and <em>Aggregates</em>.</p>
+<h2 id="entities-and-value-objects">Entities and Value Objects</h2>
+<p>An <strong>Entity</strong> is the most basic kind of component in the set of tools to model your domain, and basically it&rsquo;s an object that represents something that has an <strong>unique identity</strong>, that is <strong>preserved</strong> over time and thorough different <strong>representations</strong>.</p>]]></description>
+</item>
+<item>
+    <title>How to execute Jenkins jobs programatically</title>
+    <link>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</link>
+    <pubDate>Wed, 03 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg" referrerpolicy="no-referrer">
+            </div><p>The most common usage of Jenkins is to trigger job builds automatically in response to changes in a source code repository. In some other cases you may need to trigger jobs because of any other reason. For example, imagine that you want to execute a Jenkins job after your alert management system detects something is wrong, so it can execute a pipeline that fixes everything and the alert is resolved. This is just an example, but the idea of this post is to be able to <strong>execute a Jenkins job programatically</strong>, and not using the GUI or anything related to Jenkins itself.</p>]]></description>
+</item>
+<item>
+    <title>Domain-Driven Design: The cool parts (Part 1)</title>
+    <link>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</link>
+    <pubDate>Thu, 05 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2020-05-03-ddd-the-cool-parts-1/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-05-03-ddd-the-cool-parts-1/ddd-is-like-an-onion.jpg" referrerpolicy="no-referrer">
+            </div><p>In this series of posts I&rsquo;ll try to summarize and distill the great and famous book written by Eric Evans, <em>&quot;<a href="https://dddcommunity.org/book/evans_2003/" target="_blank" rel="noopener noreffer ">Domain-Driven Design: Tackling Complexity in the Heart of Software</a>&quot;</em>, by explaining the concepts that I liked the most in an easy and friendly way. Hopefully it will also help someone that is reading the book as well.</p>
+<p>In this first part I&rsquo;ll focus on explaining the Domain-Driven Design mindset, which is the core that needs to be understood by the people who want to apply the principles in their daily basis, and start programming using this approach.</p>]]></description>
+</item>
+</channel>
 </rss>

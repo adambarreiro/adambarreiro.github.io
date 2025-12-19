@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Domain-Driven Design: The cool parts (Part 2) - Adam Barreiro Costa | Software Engineer</title><meta name="Description" content="Adam Barreiro Costa | Software Engineer"><meta property="og:url" content="https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/">
+  <meta property="og:site_name" content="Adam Barreiro Costa | Software Engineer">
+  <meta property="og:title" content="Domain-Driven Design: The cool parts (Part 2)">
+  <meta property="og:description" content="In the first part of this series we introduced the basic principles that serve as a core of the Domain-Driven Design: The ubiquitous language, the model and the layered architecture. In this post we’ll review a first bunch of components used to model the domain: Entities, Value Objects, Services, Modules and Aggregates.
+Entities and Value Objects An Entity is the most basic kind of component in the set of tools to model your domain, and basically it’s an object that represents something that has an unique identity, that is preserved over time and thorough different representations.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-06-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-06-02T20:29:53+02:00">
+    <meta property="article:tag" content="Ddd">
+    <meta property="article:tag" content="Best Practices">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Domain-Driven Design: The cool parts (Part 2)">
+  <meta name="twitter:description" content="In the first part of this series we introduced the basic principles that serve as a core of the Domain-Driven Design: The ubiquitous language, the model and the layered architecture. In this post we’ll review a first bunch of components used to model the domain: Entities, Value Objects, Services, Modules and Aggregates.
+Entities and Value Objects An Entity is the most basic kind of component in the set of tools to model your domain, and basically it’s an object that represents something that has an unique identity, that is preserved over time and thorough different representations.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/" /><link rel="prev" href="https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/" /><link rel="next" href="https://www.adambarreiro.com/2020-07-03-monoliths-are-bad-are-they/" /><link rel="stylesheet" href="/css/style.min.45d985982cbcb7b299cef282bc3aa87c00d6b39f2721328179aa452735e9ee6d223ba93c57383e09a475b81ac91a7b10d2860f732b867d11ff6b2374fc5959c5.css" integrity="sha512-RdmFmCy8t7KZzvKCvDqofADWs58nITKBeapFJzXp7m0iO6k8Vzg+CaR1uBrJGnsQ0oYPcyuGfRH/ayN0/FlZxQ=="><link rel="preload" href="/lib/fontawesome-free/css/all.min.12fbfce0caf892a54644d4a02062ff17f6880ea41bef1436bdcadd230c5f8d38521fc09247b3c111a902af9d4293ec3efd4eacc14d889b5bd55f449593d00186.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.12fbfce0caf892a54644d4a02062ff17f6880ea41bef1436bdcadd230c5f8d38521fc09247b3c111a902af9d4293ec3efd4eacc14d889b5bd55f449593d00186.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="></noscript><link rel="preload" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Domain-Driven Design: The cool parts (Part 2)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.adambarreiro.com\/2020-06-10-ddd-the-cool-parts-2\/"
+        },"genre": "posts","keywords": "ddd, best practices","wordcount":  948 ,
+        "url": "https:\/\/www.adambarreiro.com\/2020-06-10-ddd-the-cool-parts-2\/","datePublished": "2020-06-10T00:00:00+00:00","dateModified": "2020-06-02T20:29:53+02:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "xxxx"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Adam Barreiro Costa | Software Engineer">Adam Barreiro Costa</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about"> About me </a><a class="menu-item" href="/cv.pdf"> CV </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Adam Barreiro Costa | Software Engineer">Adam Barreiro Costa</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about" title="">About me</a><a class="menu-item" href="/cv.pdf" title="">CV</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Domain-Driven Design: The cool parts (Part 2)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xxxx</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-06-10">2020-06-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;948 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg"
+        data-srcset="/posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg, /posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg 1.5x, /posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg"
+        title="/posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg" width="5096" height="3397" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#entities-and-value-objects">Entities and Value Objects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#modules">Modules</a></li>
+    <li><a href="#aggregates">Aggregates</a></li>
+    <li><a href="#whats-next">What&rsquo;s next?</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>In the <a href="/2020-05-03-ddd-the-cool-parts-1/" rel="">first part</a> of this series we introduced the basic principles that serve as a core of the Domain-Driven Design: The ubiquitous language, the model and the layered architecture. In this post we&rsquo;ll review a first bunch of components used to model the domain: <em>Entities, Value Objects</em>, <em>Services</em>, <em>Modules</em> and <em>Aggregates</em>.</p>
+<h2 id="entities-and-value-objects">Entities and Value Objects</h2>
+<p>An <strong>Entity</strong> is the most basic kind of component in the set of tools to model your domain, and basically it&rsquo;s an object that represents something that has an <strong>unique identity</strong>, that is <strong>preserved</strong> over time and thorough different <strong>representations</strong>.</p>
+<p>For example, <em>you</em> could be an instance of a &ldquo;Citizen&rdquo; entity. Why? Because it&rsquo;s probable that you have a document identifying you unequivocally in your country, it could be your passport number or your driver license. That ID is yours and can identify you despite the fact we can pick your <em>Citizen entity instance</em>, transform it, save it into a database or send it over the Internet.</p>
+<p>A <strong>Value Object</strong> in the other hand is something that is just the opposite of an Entity, it lacks of identity and its mere goal is to serve as transient data. The most obvious example is the Value Object &ldquo;Color&rdquo;. Imagine that we have two instances of Color, both with &ldquo;Red&rdquo; value:</p>
+<ul>
+<li>As they <strong>lack of an identity</strong>, we can discard one because they&rsquo;re the same.</li>
+<li>As they lack of an identity, if you change the instance &ldquo;Red&rdquo; with another instance &ldquo;Red&rdquo;, the result is the same. They&rsquo;re <strong>interchangeable</strong>.</li>
+<li>As they lack of an identity, they&rsquo;re <strong>immutable</strong>. If an instance is &ldquo;Red&rdquo;, there&rsquo;s no point in changing it to &ldquo;Blue&rdquo;. Instead, &ldquo;Red&rdquo; should complete its lifecycle (being created, used and destroyed) and another Color instance with value &ldquo;Blue&rdquo; would be created.</li>
+</ul>
+<p>With these properties, we can do a nice trick that could be interesting to save some resources. We could share one unique VO instance among many entities. For example, if we have 1000000000 users called &ldquo;John&rdquo;, instead of creating the entity with that String, we could share a unique reference to the VO &ldquo;Name&rdquo; with value &ldquo;John&rdquo;. This is just a dummy example, but you get the idea.</p>
+<p>Another important aspect of these two components is that they can have logic and operations (for example, validations). In fact, is the recommended approach. Having mere empty entities with only fields, getters and setters is a well-known antipattern called &ldquo;<a href="https://www.martinfowler.com/bliki/AnemicDomainModel.html" target="_blank" rel="noopener noreffer ">Anemic Domain Model</a>&rdquo;.</p>
+<p>If you work with Java you&rsquo;ll probably know the JPA specification and some implementations such as Spring Data or Hibernate. Specially, the Spring ecosystem is very promoter of DDD, as it provides most of the kind of components explained here.</p>
+<h2 id="services">Services</h2>
+<p><strong>Services</strong> are operations that don&rsquo;t belong to an entity or value objects, but still have their own meaning and importance inside the model. They can also work creating some reusable logic for very granular domain entities. For example, think about an operation that performs the sign up of an student an assigns her to a specific classroom. This could be modelled as a service that interacts with two entities and describes a <strong>specific operation</strong> inside a use case.</p>
+<h2 id="modules">Modules</h2>
+<p>As their name suggest, <strong>modules</strong> provide isolation to a specific group of entities, services and VOs from the rest of the model, so you can concentrate and focus separately in each part of it. Also it provides cohesion to the components grouped inside of them, and they shape the domain on a larger scale.</p>
+<h2 id="aggregates">Aggregates</h2>
+<p>In most cases, we have a bunch of entities that are related one to another. For example, we could have the following entities: <em>Car</em>, <em>Wheel</em> and <em>Motor</em>. If your model allows to manipulate these entities without any kind of constraint, you could end up managing <em>Wheels</em> separately, or even a <em>Motor</em>, without having any <em>Car</em> instantiated. Does it make sense? Not at all:</p>
+<ul>
+<li>You could end up with 500 wheels and no car.</li>
+<li>You could have many motors and one wheel, but still no car.</li>
+<li>&hellip;</li>
+</ul>
+<p>Do you see the weakness here? To solve this, you should manage <strong>only</strong> a <strong>root</strong> Entity (in this case, the <em>Car</em>), that should contain <em>Wheels</em> and a <em>Motor</em>. If you need to acces the wheels of the car, it should be done through the Car entity, other kind of access to the entities should be <strong>completely restricted</strong>.</p>
+<p>In this example, the <em>Car</em> is the <strong>aggregate</strong>. Aggregates provide <strong>isolation</strong> to the contained components and <strong>protects</strong> them of accidental or wrong access. Also, we can make stronger and <strong>strict invariants</strong> (or business rules). For example, if the only way to manage wheels of a car is through the Car aggregate, you can force and be sure that the car has only 4 wheels.</p>
+<h2 id="whats-next">What&rsquo;s next?</h2>
+<p>So far, we defined a pretty basic set of components that are essential for you to be able to create your domain model, but there are some gaps:</p>
+<ul>
+<li>
+<p>How can you <strong>create</strong> an entity from scratch? Of course, you have constructors, but they&rsquo;re not practical because they can get complicated when we don&rsquo;t have trivial entities. For example, how could you create an aggregate that contains another aggregate, from scratch? Things get complicated, huh? In following posts we&rsquo;ll review a new component that solves this problem.</p>
+</li>
+<li>
+<p>How can you <strong>retrieve</strong>, <strong>save</strong> and <strong>manage</strong> entities that are persisted in a database? If you use a relational database, you would need to execute some SQL, map the columns to the entities fields&hellip; ouch, that looks very clumsy, and everything we achieved by separating the model from the infrastructure is suddenly screwed up. Don&rsquo;t worry, there&rsquo;s another specific component to solve this.</p>
+</li>
+</ul>
+<p>Stay tuned for the next part!</p>
+<hr>
+<p><em>Cover by <a href="https://unsplash.com/@k8_iv?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener noreffer ">K8</a> on <a href="https://unsplash.com/s/photos/onion?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener noreffer ">Unsplash</a></em></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-06-02&nbsp;<a class="git-hash" href="https://github.com/adambarreiro/adambarreiro.github.io/commit/2434c01ffd40699e3d34fe521cdc44b1eb70b179" target="_blank" title="commit by Adam Barreiro(adambarreiro@protonmail.com) 2434c01ffd40699e3d34fe521cdc44b1eb70b179: Published blog">
+                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>2434c01</a></span>
+            </div><div id="page-views" class="post-info-mod">
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/" data-title="Domain-Driven Design: The cool parts (Part 2)" data-hashtags="ddd,best practices"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/" data-title="Domain-Driven Design: The cool parts (Part 2)"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/" data-hashtag="ddd"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/" data-title="Domain-Driven Design: The cool parts (Part 2)"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/" data-title="Domain-Driven Design: The cool parts (Part 2)"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/" data-title="Domain-Driven Design: The cool parts (Part 2)" data-image="/posts/2020-06-10-ddd-the-cool-parts-2/onion.jpg"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="https://www.adambarreiro.com/2020-06-10-ddd-the-cool-parts-2/" data-title="Domain-Driven Design: The cool parts (Part 2)" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=https%3a%2f%2fwww.adambarreiro.com%2f2020-06-10-ddd-the-cool-parts-2%2f&amp;text=Domain-Driven%20Design%3a%20The%20cool%20parts%20%28Part%202%29" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/ddd/">Ddd</a>,&nbsp;<a href="/tags/best-practices/">Best Practices</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-06-03-how-to-execute-jenkins-jobs-programatically/" class="prev" rel="prev" title="How to execute Jenkins jobs programatically"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>How to execute Jenkins jobs programatically</a>
+            <a href="/2020-07-03-monoliths-are-bad-are-they/" class="next" rel="next" title="Monoliths are bad... are they?">Monoliths are bad... are they?<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.142.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.8fee1bb91734542a6701c61b7be516ff2eb2df248bf4e4591aacc8f4e9df40c7ca9e9c0b3f657b166f5f13e69a8fb50a139b3babcef20aeeea18f0fbcd4169fb.css" integrity="sha512-j+4buRc0VCpnAcYbe+UW/y6y3ySL9ORZGqzI9OnfQMfKnpwLP2V7Fm9fE+aaj7UKE5s7q87yCu7qGPD7zUFp+w=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.2d0f7b71a99aaff94e9624ff32a8dc42ce645a0cba433fdc091cf34735027efd1fa2db024c2f591d768f426255f17bbf3d500b7c967b0437b3979956dffa81c6.css" integrity="sha512-LQ97camar/lOliT/MqjcQs5kWgy6Qz/cCRzzRzUCfv0fotsCTC9ZHXaPQmJV8Xu/PVALfJZ7BDezl5lW3/qBxg=="><script src="/lib/autocomplete/autocomplete.min.7e654c67e741180b83f7b4d829967003fea37a5d5014f549f0a3d7f945d2b73e73e22a1dd04a7b68712c846f004232f3030d07305784fab026100af12af8f0ac.js" integrity="sha512-fmVMZ+dBGAuD97TYKZZwA/6jel1QFPVJ8KPX+UXStz5z4iod0Ep7aHEshG8AQjLzAw0HMFeE+rAmEArxKvjwrA=="></script><script src="/lib/lunr/lunr.min.fc0fb62076d4d0ce9ce5f033fbd78081d0caa2679c50c08985bfa2e28465ddf3f36a2ecd3f7983d9d45cdca68a67a362ab9267a3845517e8699b2a59f5c2568d.js" integrity="sha512-/A+2IHbU0M6c5fAz+9eAgdDKomecUMCJhb+i4oRl3fPzai7NP3mD2dRc3KaKZ6Niq5Jno4RVF+hpmypZ9cJWjQ=="></script><script src="/lib/lazysizes/lazysizes.min.ab9f37a692ab09173b3793b49f69f352227eb2e52fec4b752467a5b386d739a30541c6a63e4f478dd5249d9bae16304db3bb6c32e69d81ee64f51cdd98efb519.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="></script><script src="/lib/clipboard/clipboard.min.ecee695e9734a0246bc64f1151f0d81609f49ced6dfa32ee20e41d38c469e003c1eee678bd28eca73a79cba603b43b385735124db5b304567f2ca2619f214e2b.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw=="></script><script src="/lib/sharer/sharer.min.f801dbb94bf494b49831b7ce6408c3a68dbc6d00ad6387e085fc7717f2ba675ce061137d6022ee2931f2463730fbdc67b4dcee95d5e9e8b7afd620020d390806.js" integrity="sha512-+AHbuUv0lLSYMbfOZAjDpo28bQCtY4fghfx3F/K6Z1zgYRN9YCLuKTHyRjcw+9xntNzuldXp6Lev1iACDTkIBg=="></script><script src="/lib/katex/katex.min.8c68eaeb75cfdcfac071717a969e1b9d9230ad52c6a2ac21ff846eaf6a258364cbb79e5e3552e32c280faeb4f4eda4d7c5bd1492e30a961c737e1e5305300281.js" integrity="sha512-jGjq63XP3PrAcXF6lp4bnZIwrVLGoqwh/4Rur2olg2TLt55eNVLjLCgPrrT07aTXxb0UkuMKlhxzfh5TBTACgQ=="></script><script src="/lib/katex/contrib/auto-render.min.e9b2833d28623d18c071d78ef13e9c79d695122d296af3dbcee7bf1bf6518b0565bab59939267fbc8f5faf696193c20f5caef3e7501969cfb306f6738032730d.js" integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac+zBvZzgDJzDQ=="></script><script src="/lib/katex/contrib/copy-tex.min.895ad99f7d8fdb0683cd271c02584953bd0542c6d4956c9feebaa16673683a45d5884f5253e3db33f8f74a86cc464477497656fb36e96a558137311bdb7f32d6.js" integrity="sha512-iVrZn32P2waDzSccAlhJU70FQsbUlWyf7rqhZnNoOkXViE9SU+PbM/j3SobMRkR3SXZW+zbpalWBNzEb238y1g=="></script><script src="/lib/katex/contrib/mhchem.min.0a5e1bcfb46df69a607013906b8cfdeaadd4a80cc7801ccd0e6ebabb6fa50ded19250bb4160cfeea33b9ec4f8866ace5846cdf34163efa983b51efa2a2968bae.js" integrity="sha512-Cl4bz7Rt9ppgcBOQa4z96q3UqAzHgBzNDm66u2+lDe0ZJQu0Fgz+6jO57E+IZqzlhGzfNBY++pg7Ue+iopaLrg=="></script><script src="/lib/cookieconsent/cookieconsent.min.c975ea3858dd8c7347d46343fb510ed236efbde6c0069cc6283eba7639d47e22a560c1391c6314247a0269e1380f93d31b662c4897fa770ab2514bd0bd2d2f68.js" integrity="sha512-yXXqOFjdjHNH1GND+1EO0jbvvebABpzGKD66djnUfiKlYME5HGMUJHoCaeE4D5PTG2YsSJf6dwqyUUvQvS0vaA=="></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script src="/js/theme.min.1f80a466a39f1c5c9b9eefe9f5557f4b3751c3872328a0aaa0ef69e8116d32c541a046dc58293acb59b9b3590d0105b7a30be02a1615d717665cc23819af6a0c.js" integrity="sha512-H4CkZqOfHFybnu/p9VV/SzdRw4cjKKCqoO9p6BFtMsVBoEbcWCk6y1m5s1kNAQW3owvgKhYV1xdmXMI4Ga9qDA=="></script></body>
+</html>

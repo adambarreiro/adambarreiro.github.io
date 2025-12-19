@@ -1,26 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Jenkins on Adam Barreiro Costa | Software Engineer</title>
-    <link>https://www.adambarreiro.com/tags/jenkins/</link>
-    <description>Recent content in Jenkins on Adam Barreiro Costa | Software Engineer</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 25 Nov 2021 19:03:39 +0100</lastBuildDate>
-    <atom:link href="https://www.adambarreiro.com/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to execute Jenkins jobs programatically, part 2</title>
-      <link>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</link>
-      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</guid>
-      <description>&lt;p&gt;In &lt;a href=&#34;https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/&#34;&gt;this post&lt;/a&gt; we saw how to trigger a Jenkins job in a programatic way, with a very simple source code snippet in Groovy to illustrate how to do it. In this post we&amp;rsquo;ll revisit the same topic, but with a Bash script. As you&amp;rsquo;ll see, the script is more &lt;em&gt;sophisticated&lt;/em&gt; as it not only runs the job, but also waits the job to complete and retrieve an hypothetical file hosted as an artifact.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to execute Jenkins jobs programatically</title>
-      <link>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</link>
-      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</guid>
-      <description>&lt;p&gt;The most common usage of Jenkins is to trigger job builds automatically in response to changes in a source code repository. In some other cases you may need to trigger jobs because of any other reason. For example, imagine that you want to execute a Jenkins job after your alert management system detects something is wrong, so it can execute a pipeline that fixes everything and the alert is resolved. This is just an example, but the idea of this post is to be able to &lt;strong&gt;execute a Jenkins job programatically&lt;/strong&gt;, and not using the GUI or anything related to Jenkins itself.&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Jenkins - Tag - Adam Barreiro Costa | Software Engineer</title>
+        <link>https://www.adambarreiro.com/tags/jenkins/</link>
+        <description>Jenkins - Tag - Adam Barreiro Costa | Software Engineer</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 16 Nov 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://www.adambarreiro.com/tags/jenkins/" rel="self" type="application/rss+xml" /><item>
+    <title>How to execute Jenkins jobs programatically, part 2</title>
+    <link>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</link>
+    <pubDate>Tue, 16 Nov 2021 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2021-11-16-how-to-execute-jenkins-jobs-programatically-2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg" referrerpolicy="no-referrer">
+            </div><p>In <a href="/2020-06-03-how-to-execute-jenkins-jobs-programatically/" rel="">this post</a> we saw how to trigger a Jenkins job in a programatic way, with a very simple source code snippet in Groovy to illustrate how to do it. In this post we&rsquo;ll revisit the same topic, but with a Bash script. As you&rsquo;ll see, the script is more <em>sophisticated</em> as it not only runs the job, but also waits the job to complete and retrieve an hypothetical file hosted as an artifact.</p>]]></description>
+</item>
+<item>
+    <title>How to execute Jenkins jobs programatically</title>
+    <link>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</link>
+    <pubDate>Wed, 03 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2020-06-03-how-to-execute-jenkins-jobs-programatically/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2020-06-03-how-to-execute-jenkins-jobs-programatically/jenkinsLogo.jpg" referrerpolicy="no-referrer">
+            </div><p>The most common usage of Jenkins is to trigger job builds automatically in response to changes in a source code repository. In some other cases you may need to trigger jobs because of any other reason. For example, imagine that you want to execute a Jenkins job after your alert management system detects something is wrong, so it can execute a pipeline that fixes everything and the alert is resolved. This is just an example, but the idea of this post is to be able to <strong>execute a Jenkins job programatically</strong>, and not using the GUI or anything related to Jenkins itself.</p>]]></description>
+</item>
+</channel>
 </rss>

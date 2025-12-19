@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Sre on Adam Barreiro Costa | Software Engineer</title>
-    <link>https://www.adambarreiro.com/tags/sre/</link>
-    <description>Recent content in Sre on Adam Barreiro Costa | Software Engineer</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2020 20:29:53 +0200</lastBuildDate>
-    <atom:link href="https://www.adambarreiro.com/tags/sre/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tips for taking the CKA exam</title>
-      <link>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</link>
-      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</guid>
-      <description>&lt;p&gt;Some days ago I decided to take the Certified Kubernetes Administrator exam, after postponing it for almost a year. My voucher was about to expire, and one of the reasons that I took so long was that the more I read about it the more scared I was to schedule it. Was this fear reasonable? Well, I scored 90% and I can assure you I&amp;rsquo;m not a Kubernetes expert. With this post, I hope I help you to clear your doubts to pass the exam.&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Sre - Tag - Adam Barreiro Costa | Software Engineer</title>
+        <link>https://www.adambarreiro.com/tags/sre/</link>
+        <description>Sre - Tag - Adam Barreiro Costa | Software Engineer</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 07 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://www.adambarreiro.com/tags/sre/" rel="self" type="application/rss+xml" /><item>
+    <title>Tips for taking the CKA exam</title>
+    <link>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</link>
+    <pubDate>Sun, 07 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2021-03-07-tips-for-taking-the-cka-exam/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2021-03-07-tips-for-taking-the-cka-exam/cka.jpg" referrerpolicy="no-referrer">
+            </div><p>Some days ago I decided to take the Certified Kubernetes Administrator exam, after postponing it for almost a year. My voucher was about to expire, and one of the reasons that I took so long was that the more I read about it the more scared I was to schedule it. Was this fear reasonable? Well, I scored 90% and I can assure you I&rsquo;m not a Kubernetes expert. With this post, I hope I help you to clear your doubts to pass the exam.</p>]]></description>
+</item>
+</channel>
 </rss>

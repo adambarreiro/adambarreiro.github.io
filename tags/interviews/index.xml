@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Interviews on Adam Barreiro Costa | Software Engineer</title>
-    <link>https://www.adambarreiro.com/tags/interviews/</link>
-    <description>Recent content in Interviews on Adam Barreiro Costa | Software Engineer</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2020 20:29:53 +0200</lastBuildDate>
-    <atom:link href="https://www.adambarreiro.com/tags/interviews/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My experience with hiring processes</title>
-      <link>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</link>
-      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</guid>
-      <description>&lt;p&gt;In some weeks I&amp;rsquo;ll be starting a new adventure in another company. In this post I&amp;rsquo;m sharing some tips and ideas about hiring processes after sending countless resumes, facing innumerable interviews, technical challenges, and finally being hired by a promising team.&lt;/p&gt;&#xA;&lt;h2 id=&#34;my-previous-experience&#34;&gt;My previous experience&lt;/h2&gt;&#xA;&lt;p&gt;Before I decided to leave my current employer I participated in no more than three hiring processes, so we can say that I had almost no experience at all in terms of how to behave and how to succeed. When I decided to start this journey I found that everyone was recommending the &lt;em&gt;&lt;a href=&#34;http://www.crackingthecodinginterview.com/&#34;&gt;Cracking the Code Interview&lt;/a&gt;&lt;/em&gt; book, so I decided to give it a try with a non-exhaustive diagonal read. If you have time I recommend you to do the same (or even better, to read it entirely). It contains a lot of worthy information even if you aren&amp;rsquo;t looking for a job: it gives you behavioral recommendations, refreshes your knowledge about algorithms and data structures, and unveils the most common questions you will face during interviews.&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Interviews - Tag - Adam Barreiro Costa | Software Engineer</title>
+        <link>https://www.adambarreiro.com/tags/interviews/</link>
+        <description>Interviews - Tag - Adam Barreiro Costa | Software Engineer</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 11 Feb 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://www.adambarreiro.com/tags/interviews/" rel="self" type="application/rss+xml" /><item>
+    <title>My experience with hiring processes</title>
+    <link>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</link>
+    <pubDate>Thu, 11 Feb 2021 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://www.adambarreiro.com/2021-02-11-my-experience-with-hiring-processes/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/2021-02-11-my-experience-with-hiring-processes/harold.jpg" referrerpolicy="no-referrer">
+            </div><p>In some weeks I&rsquo;ll be starting a new adventure in another company. In this post I&rsquo;m sharing some tips and ideas about hiring processes after sending countless resumes, facing innumerable interviews, technical challenges, and finally being hired by a promising team.</p>
+<h2 id="my-previous-experience">My previous experience</h2>
+<p>Before I decided to leave my current employer I participated in no more than three hiring processes, so we can say that I had almost no experience at all in terms of how to behave and how to succeed. When I decided to start this journey I found that everyone was recommending the <em><a href="http://www.crackingthecodinginterview.com/" target="_blank" rel="noopener noreffer ">Cracking the Code Interview</a></em> book, so I decided to give it a try with a non-exhaustive diagonal read. If you have time I recommend you to do the same (or even better, to read it entirely). It contains a lot of worthy information even if you aren&rsquo;t looking for a job: it gives you behavioral recommendations, refreshes your knowledge about algorithms and data structures, and unveils the most common questions you will face during interviews.</p>]]></description>
+</item>
+</channel>
 </rss>
